@@ -1,0 +1,622 @@
+@import '../scss/mixins';
+@import '../scss/variable';
+
+.custom-paging {
+  >.swiper-wrapper {
+    >.swiper-slide {
+      padding: 0 3rem;
+    }
+  }
+
+  // .swiper-pointer-events {
+  //   padding: 0 rem(30px);
+  // }
+  .swiper-wrapper {
+    margin-top: rem(5px);
+    z-index: 10000;
+  }
+
+  .swiper-pagination-bullet {
+    position: relative;
+    width: auto;
+    border-radius: 0;
+    font-size: 16.57px;
+    line-height: 24.84px;
+    font-weight: $weight-semibold;
+    text-transform: uppercase;
+    color: $grey;
+    opacity: 1;
+    background: $white;
+    height: auto;
+    padding: 0 rem(22px);
+
+    &:hover {
+      color: $grey-dark;
+      border-bottom: rem(2px) solid rgba(24, 24, 24, 0.6);
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    color: $black;
+    border-bottom: rem(2px) solid $black-bis;
+
+    &:hover {
+      color: $black;
+      border-bottom: rem(2px) solid $black-bis;
+    }
+  }
+
+  // .swiper-pointer-events {
+  //   padding: 0 rem(30px);
+  // }
+
+  .swiper-pagination {
+    top: 0;
+    left: 0;
+    bottom: auto;
+  }
+
+  .swiper-pagination {
+    z-index: 100003;
+  }
+
+  .carSwipper {
+    z-index: 100;
+    margin: $size-4 0;
+
+    .swiper-button-next {
+      right: 5px;
+    }
+
+    .swiper-button-prev {
+      left: 5px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-family: swiper-icons;
+      font-size: rem(25px) !important;
+      text-transform: none !important;
+      letter-spacing: 0;
+      font-variant: initial;
+      line-height: 1;
+      color: $grey;
+    }
+
+    img {
+      max-width: 80%;
+      cursor: pointer;
+
+      [data-theme='landrover'] &,
+      [data-theme='jaguar'] & {
+        max-width: 100%;
+      }
+    }
+
+    .swiper-slide {
+      text-align: center;
+    }
+  }
+
+  .carSwipper .swiper-button-prev,
+  .carSwipper .swiper-button-next {
+    z-index: 100001;
+  }
+
+  @media (max-width: 777px) {
+    .swiper-pagination-bullet {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .swiper-pagination-bullet {
+      padding: 0.5rem rem(5px);
+      font-size: rem(12px);
+    }
+  }
+
+  &.custom_Paging_Btn {
+    .carSwipper {
+      margin-block: rem(48px);
+
+      .swiper-slide {
+        max-width: 1000px;
+        margin-inline: auto !important;
+      }
+
+      img {
+        max-width: 60%;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        top: calc(50% - 1.5rem);
+
+        &:after {
+          content: '';
+          background: url('@resources/svg-icons/right-arrow-short.svg') no-repeat center;
+          width: rem(24px);
+          height: rem(24px);
+          background-size: contain;
+          opacity: 0.5;
+        }
+      }
+
+      .swiper-button-prev {
+        left: calc(50% - 500px);
+
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+
+      .swiper-button-next {
+        right: calc(50% - 500px);
+      }
+
+      @media (max-width: 879px) {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+          width: 2rem;
+          height: 2rem;
+          top: calc(50% - 1rem);
+
+          &:after {
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+
+        .swiper-button-prev {
+          left: rem(5px);
+        }
+
+        .swiper-button-next {
+          right: rem(5px);
+        }
+      }
+
+      .btn_Section,
+      .card_Title {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s opacity ease, 0.2s visibility ease;
+      }
+
+      .swiper-slide-active {
+
+        .btn_Section,
+        .card_Title {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    .swiper-pagination-bullet {
+      text-transform: capitalize;
+      border: 0;
+      border-radius: rem(30px);
+      padding: rem(10px) rem(40px);
+
+      &:hover,
+      &.swiper-pagination-bullet-active {
+        background-color: #333333;
+        color: #fff;
+      }
+
+      @media (max-width: 879px) {
+        padding: rem(4px) rem(10px);
+      }
+    }
+  }
+}
+
+.carSwipper {
+  padding: 0;
+  position: static;
+
+  // .swiper-wrapper {
+  //   .swiper-slide {
+  //     max-width: 20%;
+  //     @include MQ(1024px) {
+  //       max-width: 33.33%;
+  //     }
+  //     @include MQ(880px) {
+  //       max-width: 50%;
+  //     }
+  //     @include MQ(480px) {
+  //       max-width: 100%;
+  //     }
+  //   }
+  // }
+  [data-theme='newtoyota'] & {
+    .swiper-wrapper {
+      .swiper-slide {
+        max-width: initial;
+
+        @include MQ(1024px) {
+          max-width: 50%;
+        }
+
+        @include MQ(880px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.explore_Vehicles_Slider {
+  .carSwipper {
+    margin-top: 3rem;
+    margin-bottom: 0;
+
+    .swiper-wrapper {
+      padding-bottom: 1.7rem;
+      // .swiper-slide {
+      //   max-width: 20%;
+      // }
+    }
+  }
+
+  .swiper-slide {
+    img {
+      aspect-ratio: 2.3;
+    }
+
+    p {
+      margin-bottom: 0;
+
+      &:first-of-type {
+        font-size: rem(18px);
+        font-weight: $weight-medium;
+        line-height: rem(20px);
+        text-transform: uppercase;
+      }
+
+      font-size: rem(11px);
+      line-height: rem(16px);
+      text-transform: capitalize;
+      font-weight: $weight-normal;
+    }
+  }
+
+  .swiper-pagination-bullet:not(.swiper-slide .swiper-pagination-bullet) {
+    font-size: rem(24px);
+    line-height: rem(35px);
+    font-weight: $weight-normal;
+    color: $black;
+
+    &:hover {
+      color: $black;
+      border-bottom: 0;
+
+      &::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 3px;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-color: #0a0000;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  .swiper-pagination-bullet-active:not(.swiper-slide .swiper-pagination-bullet-active) {
+    border-bottom: 0;
+
+    &::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
+    &:hover {
+      border-bottom: 0;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    // background-color: $black;
+    opacity: 0.8;
+  }
+}
+
+.canadacadillac_exploreAllVehicleSlider {
+  padding-top: 4rem;
+
+  >.swiper-wrapper {
+    >.swiper-slide {
+      padding: 0 3rem;
+    }
+  }
+
+  .carSwipper {
+    padding: 0;
+    position: static;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        max-width: initial;
+        width: 25%;
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      &.swiper-button-disabled {
+        opacity: 0.2;
+      }
+
+      &:hover {
+        opacity: 0.75;
+      }
+
+      width: rem(55px);
+      height: rem(55px);
+      background: transparent;
+      color: $black;
+      border-radius: 100%;
+
+      &:after {
+        font-family: 'icomoon' !important;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 3rem !important;
+        color: #5c5c5c;
+        content: '\e316';
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+
+    .swiper-button-prev {
+      left: 0;
+
+      &:after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .swiper-pagination {
+    max-width: 700px;
+    display: flex;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+      margin: 0;
+      white-space: nowrap;
+
+      @include MQ(389px) {
+        white-space: normal;
+      }
+    }
+  }
+
+  .swiper-pagination-bullet {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: 'CadillacGothicWide', 'Cadillac_Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0a0a0a;
+    color: #0a0a0a;
+    margin: 0;
+    flex: 1;
+
+    &:hover,
+    &.swiper-pagination-bullet-active {
+      background-color: #0a0a0a;
+      color: #fff;
+      border-bottom: 1px solid #0a0a0a;
+    }
+
+    &+.swiper-pagination-bullet {
+      margin-left: -1px;
+    }
+
+    @include MQ(879px) {
+      font-size: 0.6rem;
+      padding: 0.75em 0.25em;
+    }
+  }
+}
+
+.cadillac_exploreAllVehicleSlider {
+  .swiper-pagination-bullet {
+
+    &:hover,
+    &.swiper-pagination-bullet-active {
+      border-bottom: 2px solid $secondary;
+    }
+  }
+}
+
+.land_Rover_Explore_Vehicle_Slider {
+  // padding: 0 3rem;
+  position: relative;
+
+  .swiper-slide {
+    padding: 0 3rem;
+  }
+
+  .swiper {
+    padding: 0;
+    position: static;
+
+    .swiper-slide {
+      padding: 0;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $black;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:after {
+        font-family: 'icomoon';
+        font-size: 3rem !important;
+        line-height: 1;
+        color: black;
+        font-weight: normal;
+      }
+    }
+
+    .swiper-button-prev {
+      left: 0;
+
+      &:after {
+        content: '\e408';
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+
+      &:after {
+        content: '\e409';
+      }
+    }
+  }
+}
+
+[data-theme='newtoyota'] {
+  .custom-paging {
+    >.swiper-pagination {
+      .swiper-pagination-bullet {
+        border: 0;
+        border-radius: rem(30px);
+        padding: em(8px) em(11px);
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        color: #000;
+
+        &:hover,
+        &.swiper-pagination-bullet-active {
+          background-color: #555;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+[data-theme='mercedesbenz'] {
+  .custom-paging {
+    &.swiper {
+      margin-inline: -1rem;
+    }
+
+    >.swiper-wrapper {
+      >.swiper-slide {
+        padding: 0 1.5rem;
+      }
+    }
+
+    .carSwipper {
+      .swiper-button-prev {
+        left: 0;
+      }
+
+      .swiper-button-next {
+        right: 0;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      text-transform: capitalize;
+      background-color: transparent;
+
+      &:hover {
+        color: #4d4d4d;
+        border-bottom: 2px solid rgba(198, 198, 198, 0.6);
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      border-bottom: 0;
+    }
+  }
+}
+
+[data-theme="GMCtheme1"],
+[data-theme='lacdjr'] {
+  .custom-paging {
+    >.swiper-wrapper {
+      >.swiper-slide {
+        padding: 0;
+      }
+    }
+  }
+}
+
+[data-site=westchesterbenz],
+[data-site=mbcincy] {
+  .explore_vehicle_mercedes {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      &:after {
+        font-family: 'icomoon';
+        font-size: 3rem !important;
+        line-height: 1;
+        text-shadow: 0 0 1px #0a0a0a;
+        color: black;
+        opacity: 0.25;
+        font-weight: normal;
+      }
+
+      @include MQ(879px) {
+        display: none;
+      }
+    }
+
+    .swiper-button-prev {
+      &:after {
+        content: '\e408';
+      }
+    }
+
+    .swiper-button-next {
+      &:after {
+        content: '\e409';
+      }
+    }
+  }
+}

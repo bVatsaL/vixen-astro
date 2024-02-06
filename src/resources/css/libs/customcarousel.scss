@@ -1,0 +1,46 @@
+@import '../scss/variable';
+@import '../scss/mixins';
+
+.carousel-container {
+  --swiper-navigation-color: '#fff';
+  --swiper-navigation-size: rem(20px);
+  max-width: rem(750px);
+  margin: rem(40px) auto;
+
+  .swiper-button-prev {
+    left: rem(30px);
+    height: rem(40px);
+    width: rem(40px);
+    border-radius: 50%;
+    background-color: #333;
+    border: rem(1px) solid;
+    color: #fefefe;
+    opacity: 0.75;
+    font-weight: bold;
+  }
+
+  .swiper-button-next {
+    right: rem(30px);
+    height: rem(40px);
+    width: rem(40px);
+    border-radius: 50%;
+    background-color: #333;
+    border: rem(1px) solid;
+    color: #fefefe;
+    opacity: 0.75;
+    font-weight: bold;
+  }
+
+  .swiper-slide {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+  @media (max-width: 776px) {   
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }   
+  }
+}
+
+

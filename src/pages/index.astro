@@ -1,0 +1,15 @@
+---
+import Header from '@components/header';
+import Shell from '../layouts/shell.astro';
+import { fetchSiteConfig } from '../services/site-config'
+
+const siteConfig = await fetchSiteConfig();
+globalThis.siteConfig = siteConfig;
+
+const {} = Astro.params;
+---
+
+<Shell title="Welcome to Astro." headerBg='' siteName='' siteUrl=''>
+	<Header client:load />
+	"/": Home Page
+</Shell>

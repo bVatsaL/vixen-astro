@@ -1,0 +1,42 @@
+@import '../scss/mixins';
+@import '../scss/variable';
+.thumb-slider-main {
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-family: swiper-icons;
+        font-size: rem(20px) !important;
+        text-transform: none !important;
+        letter-spacing: 0;
+        font-variant: initial;
+        line-height: 1;
+        color: #fff;
+        background-color: #696969;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        padding: rem(6px) rem(11px);
+    }
+}
+
+.thumb-slider-thumb {
+    .swiper-pointer-events.swiper-vertical {
+        height: 350px;
+    }
+    margin-bottom: 15px;
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-family: swiper-icons;
+        font-size: rem(12px) !important;
+        text-transform: none !important;
+        letter-spacing: 0;
+        font-variant: initial;
+        line-height: 1;
+        color: #fff;
+        background-color: #696969;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        padding: rem(7px) rem(10px);
+    }
+    .swiper-slide {
+        height: 300px;
+    }
+}

@@ -1,0 +1,26 @@
+.cardslider {
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-color: #0a0a0a;
+  --swiper-pagination-color: #0d0d0d;
+}
+
+.cardslider {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  position: relative;
+}
+
+.cardslider .swiper {
+  position: static;
+}
+
+.cardslider .swiper-button-next,
+.cardslider .swiper-button-prev {
+  line-height: 1;
+  font-size: 3rem;
+}
+
+.cardslider .swiper-pagination {
+  position: static;
+}
+/*# sourceMappingURL=custom-slider.css.map */

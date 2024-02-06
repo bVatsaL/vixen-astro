@@ -1,0 +1,20 @@
+@import '../scss/variable';
+@import '../scss/mixins';
+.custom_Range_Slider {
+  .rc-slider-rail {
+    background-color: rgba($grey-dark, 0.3);
+    height: 2px;
+  }
+  .rc-slider-track {
+    background-color: $grey;
+    height: 2px;
+  }
+  .rc-slider-handle {
+    background-color: $black;
+    border-color: $black;
+    &.rc-slider-handle-dragging {
+      border-color: rgba($black, 0.6);
+      box-shadow: 0 0 0 5px rgba($black, 0.3);
+    }
+  }
+}

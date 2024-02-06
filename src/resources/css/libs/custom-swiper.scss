@@ -1,0 +1,2033 @@
+@import '../scss/variable';
+@import '../scss/mixins';
+
+$primary-rgb: #{var(--primary-color-rgb-values)};
+
+.swiper {
+  user-select: none;
+  opacity: 0;
+  visibility: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.bannerslider {
+  --swiper-navigation-size: rem(20px);
+  --swiper-navigation-color: #0a0a0a;
+  --swiper-pagination-color: #0d0d0d;
+}
+
+.bannerslider {
+  padding-left: $size-1;
+  padding-right: $size-1;
+  position: relative;
+
+  &.fullWidth {
+    padding: 0;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $white;
+
+      &::after {
+        text-shadow: 0 0 rem(1px) $black;
+      }
+    }
+  }
+
+  .swiper {
+    position: static;
+  }
+
+  .swiper-button-next {
+    right: rem(20px);
+  }
+
+  .swiper-button-prev {
+    left: rem(20px);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    line-height: 1;
+    font-size: $size-1;
+    color: $black;
+    opacity: 0.75;
+
+    &::after {
+      text-shadow: 0 0 rem(1px) $black;
+      font-size: 1.8rem;
+      font-weight: $weight-bold;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .bannerslider {
+    padding: 0 0 $size-3 0;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 880px) {
+  .product-images-slider {
+    .swiper-pagination-bullets {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .product-images-slider {
+    .swiper-pagination-bullets {
+      position: static;
+      margin-top: 0.625rem;
+    }
+  }
+}
+
+// slider component scss : ->
+
+.full_Width_Slider {
+  opacity: 1;
+  visibility: visible;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $black;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: rem(28px);
+    font-weight: bolder;
+  }
+}
+
+.mainsliderclass {
+  margin-bottom: rem(8px);
+
+  img {
+    width: 100%;
+  }
+}
+
+.thumbsliderclass {
+  .swiper-slide-active {
+    border: rem(2px) solid $primary;
+    padding: rem(2px);
+  }
+
+  .swiper-pagination {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.product_slider {
+  user-select: none;
+
+  img {
+    display: block;
+  }
+
+  .swiper-pagination {
+    padding: rem(10px);
+    background: rgba($white, 0.75);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    left: auto;
+    border-top-left-radius: $border-radius;
+    font-weight: bold;
+    line-height: 1;
+    font-size: $size-medium;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: rem(40px);
+    height: rem(40px);
+    border-radius: rem(40px);
+    background: rgba($primary-rgb, 0.5);
+    color: $white;
+    border: 1px solid $white;
+    outline: none;
+    transition: background 0.3s ease;
+
+    @include hover {
+      background: $primary;
+    }
+
+    &::after {
+      font-size: $size-normal;
+    }
+  }
+
+  &.thumbsliderclass {
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: rem(26px);
+      height: rem(26px);
+
+      &::after {
+        font-size: $size-small;
+      }
+    }
+
+    @include MQ(605px) {
+      height: 0 !important;
+      visibility: hidden !important;
+      min-height: 0 !important;
+      max-height: 0 !important;
+    }
+  }
+}
+
+.d_None_Vehicle_Count {
+  .swiper-pagination {
+    display: none;
+
+    [data-theme='landrover'] & {
+      display: none;
+    }
+  }
+}
+
+.community_Slider {
+  .swiper-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .swiper-slide img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: 100%;
+  }
+
+  .swiper-button-prev {
+    color: var(--primary-color-darkest);
+    position: absolute;
+    left: 0;
+
+    &::after {
+      font-size: rem(24px);
+      font-weight: bolder;
+    }
+  }
+
+  .swiper-button-next {
+    color: var(--primary-color-darkest);
+    position: absolute;
+    right: 0;
+
+    &::after {
+      font-size: rem(24px);
+      font-weight: bolder;
+    }
+  }
+
+  .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 5px 5px;
+    background: var(--primary-color-darkest);
+  }
+
+  .swiper-pagination {
+    position: static;
+  }
+}
+
+[data-site='tubmanchev'] {
+  .home_Banner_Slider {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: $black;
+      background: none;
+      font-size: 2rem;
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}
+
+.home_Banner_Slider {
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba($primary-rgb, 0.75);
+    border-radius: $border-radius;
+
+    &::after {
+      font-size: inherit;
+    }
+
+    &:hover {
+      background: rgba($primary-rgb, 1);
+    }
+
+    &.swiper-button-disabled {
+      pointer-events: inherit;
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+
+  @include MQ(1023px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+
+    .swiper-pagination {
+      min-height: rem(25.59px);
+      display: block;
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem;
+
+      span {
+        margin: 0 !important;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+.banner_With_Outer_Nav {
+  width: 93%;
+  position: static;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $black;
+    font-size: 1.5rem;
+    text-shadow: 0 0 1px $black;
+    width: 2rem;
+  }
+}
+
+.ford_VDP_Thumb_Slider,
+.ford_VDP_Main_Slider {
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: $primary;
+    opacity: 0.7;
+
+    @include hover {
+      opacity: 1;
+    }
+  }
+
+  @include MQ(1023px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+
+    .swiper-pagination {
+      display: block;
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+
+      span {
+        margin: 0 !important;
+        width: auto;
+        height: auto;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+.wolfe_VDP_Thumb_Slider,
+.wolfe_VDP_Main_Slider {
+  &.blackNav {
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: #212121;
+      opacity: 1;
+      outline: 0;
+      width: 3.5rem;
+      height: 3.5rem;
+
+      &::after {
+        font-size: rem(24px);
+      }
+
+      &:hover {
+        background-color: #212121;
+      }
+
+      [data-site-unique-id='ROCKHILLNISSAN'] & {
+        width: rem(40px);
+        height: rem(40px);
+        border: 0;
+        background-color: #000;
+        color: $rockhillNissanYellow;
+        font-size: 2.5rem;
+        opacity: 0.75;
+
+        &:after {
+          content: '\e409';
+          font-family: 'icomoon';
+          font-size: inherit;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: $primary;
+    opacity: 0.7;
+
+    @include MQ(770) {
+      display: none;
+    }
+
+    @include hover {
+      opacity: 1;
+    }
+  }
+
+  &.thumbsliderclass {
+    .swiper-slide-active {
+      border: none;
+      padding: rem(2px);
+    }
+
+    img {
+      width: 100%;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: rem(26px);
+      height: rem(26px);
+
+      &::after {
+        font-size: $size-small;
+      }
+
+      [data-site-unique-id='ROCKHILLNISSAN'] & {
+        width: rem(30px);
+        height: rem(30px);
+        font-size: 1.5rem;
+
+        &::after {
+          font-size: inherit;
+        }
+
+        &:hover {
+          background-color: #000;
+        }
+      }
+    }
+
+    @include MQ(605px) {
+      display: block;
+      height: auto !important;
+      visibility: visible !important;
+      min-height: initial !important;
+      max-height: initial !important;
+    }
+  }
+}
+
+.swiper-initialized {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ford_VDP_Main_Slider {
+  .swiper-pagination {
+    top: 0;
+    right: auto;
+    height: fit-content;
+    border-radius: 0 0 $border-radius 0;
+  }
+}
+
+.canadacadillac_home_Banner_Slider {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .swiper-pagination {
+    display: block;
+    bottom: 2rem;
+
+    .swiper-pagination-bullet {
+      width: rem(22px);
+      height: rem(13px);
+      background-color: transparent;
+      border: 1px solid $white;
+      opacity: 1;
+      margin: 0 0.4rem !important;
+      border-radius: 50%;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $white;
+      }
+    }
+
+    @include MQ(1024px) {
+      position: absolute;
+      bottom: 1rem;
+    }
+
+    @include MQ(880px) {
+      display: none;
+    }
+  }
+}
+
+.sub_Hero_Slider {
+  @include MQ(880px) {
+    padding: 0 2.5rem;
+    // overflow: visible;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    color: $white;
+
+    &:after {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    @include MQ(880px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0.25rem;
+  }
+
+  .swiper-button-next {
+    right: 0.25rem;
+  }
+
+  .swiper-wrapper {
+    @include MQ_min(881px) {
+      transform: none !important;
+    }
+  }
+}
+
+.Cadillac_bannerSlider {
+  .swiper-pagination {
+    gap: rem(10px);
+
+    .swiper-pagination-bullet {
+      height: rem(8px);
+      width: rem(8px);
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $primary;
+    }
+  }
+}
+
+.canadaCadillac_QV_Slider {
+  @include MQ(879px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+
+    .swiper-pagination {
+      display: block;
+      position: static;
+
+      .swiper-pagination-bullet-active {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.canadaCadillac_QV_Thumb_Slider {
+  .swiper-slide.swiper-slide-active {
+    border: 0;
+    padding: 0;
+  }
+
+  @include MQ(879px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+}
+
+.search_Result_Card_Slider {
+  position: static;
+
+  .swiper-slide {
+    width: 245px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    &.swiper-button-disabled {
+      opacity: 0.2;
+    }
+
+    width: rem(55px);
+    height: rem(55px);
+    background: transparent;
+    color: $black;
+    opacity: 0.5;
+    border-radius: 100%;
+
+    &:hover {
+      background: $white;
+      opacity: 1;
+    }
+
+    &:after {
+      font-family: 'icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 3rem;
+      content: '\e316';
+    }
+  }
+
+  .swiper-button-next {
+    right: 0;
+
+    &:after {
+      transform: rotate(90deg);
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+
+    &:after {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.home_Banner_Wrapped {
+  position: static;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $black;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:after {
+      font-family: 'icomoon';
+      font-size: 3rem;
+      line-height: 1;
+      text-shadow: 0 0 1px #0a0a0a;
+      color: black;
+      opacity: 0.75;
+      font-weight: normal;
+    }
+
+    @include MQ(879px) {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -30px;
+
+    &:after {
+      content: '\e408';
+    }
+  }
+
+  .swiper-button-next {
+    right: -30px;
+
+    &:after {
+      content: '\e409';
+    }
+  }
+
+  &.nav_Arrow_align {
+    .swiper-button-prev {
+      left: 0;
+    }
+
+    .swiper-button-next {
+      right: 0;
+    }
+  }
+}
+
+.blackColorNav {
+  padding: 0 1.3rem;
+
+  .swiper-slide {
+    height: auto;
+
+    &:hover {
+      z-index: 100000;
+      position: sticky;
+    }
+  }
+
+  &.outerNav {
+    position: static;
+  }
+
+  @include MQ(880px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -7px;
+
+    &::after {
+      background-image: url(https://static.foxdealer.com/71/2020/01/slick-arrow-1.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 2.75rem;
+      width: 1.875rem;
+      transform: rotatey(180deg);
+    }
+  }
+
+  .swiper-button-next {
+    right: -11px;
+
+    &:after {
+      background-image: url(https://static.foxdealer.com/71/2020/01/slick-arrow-1.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 2.75rem;
+      margin: auto;
+      position: absolute;
+      width: 1.875rem;
+    }
+  }
+
+  .swiper-pagination-bullets {
+    bottom: -6px;
+
+    .swiper-pagination-bullet {
+      background: $primary;
+    }
+
+    @media (min-width: 880px) {
+      display: none;
+    }
+  }
+}
+
+.equalHeight {
+  .swiper-slide {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.white_Arrow_Slider {
+  position: static;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $black;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:after {
+      font-family: 'icomoon';
+      font-size: 4rem;
+      line-height: 1;
+      text-shadow: 0 0 1px #0a0a0a;
+      color: $white;
+      font-weight: normal;
+    }
+
+    @include MQ(879px) {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -30px;
+
+    &:after {
+      content: '\e408';
+    }
+  }
+
+  .swiper-button-next {
+    right: -30px;
+
+    &:after {
+      content: '\e409';
+    }
+  }
+
+  .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 5px 5px;
+    background: var(--primary-color-darkest);
+  }
+}
+
+.QV_VDP_FullWidth_Slider {
+  user-select: none;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: rem(30px);
+    height: rem(30px);
+    border-radius: rem(30px);
+    background-color: rgba($primary-rgb, 0.5);
+    color: $white;
+    outline: 1px solid $white;
+    transition: background-color 0.3s ease;
+
+    @include hover {
+      background: $primary;
+    }
+
+    &::after {
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    @include MQ(880px) {
+      display: none;
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+
+    @include MQ(880px) {
+      display: block;
+      position: relative;
+      margin: 1rem 0;
+    }
+  }
+}
+
+.toyota_banner_slider {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $white;
+    background: none;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:after {
+      color: $black;
+    }
+
+    &:hover {
+      background: none;
+    }
+
+    @include MQ(879px) {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+
+    &:after {
+      content: '\e408';
+    }
+  }
+
+  .swiper-button-next {
+    right: 0;
+
+    &:after {
+      content: '\e409';
+    }
+  }
+
+  .swiper-pagination-bullets {
+    bottom: -6px;
+
+    .swiper-pagination-bullet {
+      background: $primary;
+    }
+
+    @media (min-width: 880px) {
+      display: none;
+    }
+  }
+}
+
+[data-site-unique-id="RIGHTTOYOTA"] {
+  .home_Banner_Slider {
+    .swiper-button-next,
+    .swiper-button-prev {
+      background: transparent;
+    }
+  }
+}
+
+.landrover_HP_Banner_Slider,
+.jaguar_HP_Banner_Slider,
+.nissan_HP_Banner_Slider {
+  --swiper-theme-color: #1e1e1e;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    background: transparent;
+    color: black;
+
+    &:after {
+      opacity: 1;
+    }
+
+    @include hover {
+      background: transparent;
+    }
+  }
+}
+
+.centeredslides {
+  .swiper-wrapper {
+    justify-content: center;
+  }
+}
+
+[data-site-unique-id='JOSEPHTOYOTA'] {
+  .toyota_banner_slider {
+    .home_Banner_Slider {
+      .swiper-button-prev {
+        left: -30px;
+
+        &:after {
+          content: '\e408';
+          color: #000;
+        }
+      }
+
+      .swiper-button-next {
+        right: -30px;
+
+        &:after {
+          content: '\e409';
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+[data-site='tubmanchev'] {
+  .wolfe_VDP_Main_Slider,
+  .boltEvImgSlider {
+    .swiper-button-prev,
+    .swiper-button-next {
+      border: 1px solid $black;
+      outline: 0;
+
+      &:after {
+        font-family: 'icomoon';
+        font-size: 2.5rem;
+        line-height: 1;
+        color: $black;
+        font-weight: normal;
+      }
+    }
+
+    .swiper-button-prev {
+      &:after {
+        content: '\e408';
+      }
+    }
+
+    .swiper-button-next {
+      &:after {
+        content: '\e409';
+      }
+    }
+  }
+}
+
+.singleImgWidth {
+  img {
+    width: auto;
+    margin: 0 auto;
+    aspect-ratio: unset !important;
+  }
+}
+
+.vdp_SingleImg_Width {
+  @include MQ(767px) {
+    .swiper-wrapper {
+      transform: none !important;
+    }
+
+    .swiper-slide,
+    .swiper-slide-active {
+      flex-basis: 100% !important;
+    }
+  }
+}
+
+[data-theme='landrover'] {
+  .canadaCadillac_QV_Slider {
+    .swiper-slide {
+      padding: 5px;
+    }
+  }
+}
+
+[data-site-unique-id='CLAREMONTTOYOTA'],
+[data-site-unique-id='MONROVIACDJR'],
+[data-site-unique-id='JOSEPHTOYOTA'],
+[data-site-unique-id='JOHNSONCITYTOYOTA'] {
+  .wolfe_VDP_Main_Slider {
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-image: none !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+[data-theme='lacdjr'] {
+  .wolfe_VDP_Thumb_Slider,
+  .lacdjr_VDP_Main_Slider,
+  .lacdjr_VDP_Thumb_Slider {
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-image: none !important;
+      padding: 0 !important;
+    }
+  }
+
+  .home_Banner_Slider {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+}
+
+[data-theme='jaguar'] {
+  .wolfe_VDP_Thumb_Slider,
+  .wolfe_VDP_Main_Slider {
+    &.blackNav {
+      .swiper-button-next,
+      .swiper-button-prev {
+        @include MQ(768px) {
+          display: none;
+        }
+
+        background-color: rgba($primary-rgb, 0.75);
+        width: rem(45px);
+        height: rem(45px);
+        border: 1px solid $white;
+
+        &:hover {
+          background-color: rgba($primary-rgb, 1);
+        }
+
+        &:after {
+          font-weight: 700;
+          font-size: rem(22px);
+        }
+      }
+
+      &.thumbsliderclass {
+        .swiper-button-next,
+        .swiper-button-prev {
+          transform: scale(0.65);
+        }
+      }
+    }
+  }
+}
+
+.boltEvImgSlider {
+  padding: 0 1.3rem;
+
+  .swiper-pagination-bullets {
+    display: block;
+    bottom: -6px;
+  }
+
+  .swiper-wrapper {
+    padding-bottom: rem(20px);
+  }
+
+  .swiper-pagination-bullet {
+    background: $primary;
+  }
+
+  .swiper-button-prev {
+    left: -3px;
+    border: none !important;
+  }
+
+  .swiper-button-next {
+    right: -3px;
+    border: none !important;
+  }
+}
+
+.banner_With_Outer_Pagination.banner_With_Outer_Pagination {
+  --swiper-theme-color: var(--primary-color);
+  width: calc(100% - 3rem);
+  padding-bottom: 3rem;
+}
+
+.showDesktopPagination {
+  padding: 0 3rem;
+
+  .swiper-wrapper {
+    padding-bottom: 3.25rem;
+    align-items: center;
+  }
+
+  @media (min-width: 880px) {
+    .swiper-pagination-bullets {
+      display: block;
+    }
+  }
+}
+
+.hybridVehicleSlider {
+  padding: 0 2rem;
+
+  .swiper-wrapper {
+    padding-bottom: 3rem;
+  }
+
+  .swiper-pagination-bullets {
+    bottom: 9px;
+
+    .swiper-pagination-bullet {
+      background: #3e3e3e;
+    }
+  }
+
+  @media (min-width: 880px) {
+    .swiper-pagination-bullets {
+      display: block;
+    }
+  }
+}
+
+.primary_Pagination_Dot.primary_Pagination_Dot {
+  --swiper-theme-color: var(--primary-color);
+}
+
+[data-site-unique-id='MONROVIACDJR'] {
+  .banner_With_Outer_Nav {
+    .swiper-button-next,
+    .swiper-button-prev {
+      background: transparent;
+      width: 3rem;
+    }
+  }
+
+  .mainsliderclass {
+    img {
+      max-height: 255px;
+    }
+  }
+
+  .thumbsliderclass {
+    img {
+      max-height: 80px;
+    }
+  }
+
+  .img_Max_Height.img_Max_Height {
+    img {
+      max-height: fit-content;
+    }
+  }
+}
+
+.lacdjr_VDP_Thumb_Slider .swiper-button-next,
+.lacdjr_VDP_Thumb_Slider .swiper-button-prev,
+.lacdjr_VDP_Main_Slider .swiper-button-next,
+.lacdjr_VDP_Main_Slider .swiper-button-prev {
+  background-color: #212121;
+}
+
+.lacdjr_VDP_Thumb_Slider .swiper-button-next:hover,
+.lacdjr_VDP_Thumb_Slider .swiper-button-prev:hover,
+.lacdjr_VDP_Main_Slider .swiper-button-next:hover,
+.lacdjr_VDP_Main_Slider .swiper-button-prev:hover {
+  background-color: #212121;
+}
+
+.hondaseirra_slider {
+  position: relative;
+
+  img {
+    display: block;
+    width: calc(100% - 6rem);
+    margin: 0 auto;
+
+    @include MQ(879px) {
+      width: 100%;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+
+    &:after {
+      content: '\e408';
+    }
+  }
+
+  .swiper-button-next {
+    right: 0;
+
+    &:after {
+      content: '\e409';
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+    min-height: 1.599375rem;
+    position: static;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    padding: 0.5rem;
+
+    @include MQ(879px) {
+      display: flex;
+    }
+  }
+}
+
+.sales_hondaseirra_slider {
+  .swiper-pagination {
+    display: flex;
+  }
+}
+
+.toyoya_Explore_Vehicle_Slider,
+.honda_Explore_Vehicle_Slider {
+  position: static;
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .swiper-pagination {
+    pointer-events: none;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid #000;
+    border-radius: 50%;
+    top: auto;
+    bottom: 0;
+    z-index: 99;
+
+    &:after {
+      content: '';
+      background: url('@resources/svg-icons/right-arrow-short.svg') no-repeat center;
+      width: rem(20px);
+      height: rem(20px);
+      background-size: contain;
+      opacity: 1;
+    }
+  }
+
+  .swiper-button-prev {
+    left: calc(50% - 30vw);
+
+    &:after {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .swiper-button-next {
+    right: calc(50% - 30vw);
+  }
+}
+
+[data-theme='toyotacanadatheme1'] {
+  .toyoya_Explore_Vehicle_Slider {
+    .swiper-button-prev {
+      left: 0;
+    }
+
+    .swiper-button-next {
+      z-index: 0;
+      right: 0;
+    }
+  }
+
+  .home_Banner_Slider {
+    .swiper-pagination.swiper-pagination-lock {
+      display: none !important;
+    }
+  }
+}
+
+[data-theme='toyotatheme2'] {
+  @include MQ(480px) {
+    .toyoya_Explore_Vehicle_Slider {
+      .swiper-button-prev {
+        left: 0;
+      }
+
+      .swiper-button-next {
+        z-index: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.thumb_Img_auto.thumb_Img_auto {
+  .swiper-slide {
+    height: auto;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.foxDealer_Slider_Default_Theme {
+  .swiper-button-prev,
+  .swiper-button-next {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: $black;
+
+    &:after {
+      font-family: 'icomoon';
+      font-size: 3rem;
+      line-height: 1;
+      color: inherit;
+      font-weight: normal;
+    }
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .swiper-button-prev {
+    &:after {
+      content: '\e408';
+    }
+  }
+
+  .swiper-button-next {
+    &:after {
+      content: '\e409';
+    }
+  }
+
+  &.arrows_Outside {
+    position: relative;
+    padding: 0 3rem;
+
+    .swiper {
+      position: static;
+    }
+  }
+
+  &.arrow_white {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: $white;
+    }
+  }
+
+  &.arrow_Blend {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: $white;
+      mix-blend-mode: difference;
+    }
+  }
+
+  &.arrows_Filled_Dark {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: $white;
+      background: $grey-darker;
+    }
+  }
+
+  &.arrows_Rounded {
+    .swiper-button-prev,
+    .swiper-button-next {
+      border-radius: 10rem;
+      width: rem(40px);
+      height: rem(40px);
+
+      &:after {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &.arrows_Middle_Inside_Between_Slides {
+    .swiper-button-prev {
+      left: 25%;
+    }
+
+    .swiper-button-next {
+      right: 25%;
+    }
+
+    @include MQ(880px) {
+      .swiper-button-prev {
+        left: 5%;
+      }
+
+      .swiper-button-next {
+        right: 5%;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        [data-theme='nissantheme2'] & {
+          top: auto;
+          bottom: 0.625rem;
+          background: $grey;
+
+          &:hover {
+            background: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content_Img_Slider {
+  .img_Slider {
+    width: 100%;
+    padding-bottom: 3rem;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .swiper-scrollbar {
+      &.swiper-scrollbar-horizontal {
+        height: 3px;
+      }
+    }
+  }
+
+  .content_Slider {
+    height: 100%;
+
+    .swiper-slide {
+      padding-bottom: 4rem;
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      width: auto;
+      min-width: rem(100px);
+      text-align: left;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 1px solid rgba($nissanBlack, 0.7);
+      border-radius: 50%;
+      top: auto;
+      bottom: 2rem;
+      z-index: 99;
+
+      &:after {
+        content: '';
+        background: url('@resources/svg-icons/right-arrow.svg') no-repeat center;
+        width: 100%;
+        height: 100%;
+        background-size: rem(8px);
+        opacity: 1;
+      }
+    }
+
+    .swiper-button-prev {
+      left: rem(100px);
+
+      &:after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    .swiper-button-next {
+      left: rem(130px);
+      right: auto;
+    }
+
+    @include MQ(1024px) {
+      padding: 2rem 0;
+      position: relative;
+
+      .swiper-pagination {
+        bottom: auto;
+        top: 0;
+        line-height: 2rem;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        bottom: auto;
+        top: 0;
+        margin-top: 0;
+        width: 2rem;
+        height: 2rem;
+      }
+
+      .swiper-button-next {
+        left: rem(140px);
+      }
+    }
+  }
+}
+
+.tacoma_slider {
+  padding-bottom: 2rem;
+
+  .swiper-pagination-bullets {
+    bottom: 9px;
+
+    .swiper-pagination-bullet {
+      background: $primary;
+    }
+  }
+}
+
+[data-theme='nissantheme1'],
+[data-theme='mercedesbenz'] {
+  .mainsliderclass {
+    margin-bottom: 1rem;
+
+    img {
+      border-radius: rem(5px);
+    }
+  }
+
+  .wolfe_VDP_Thumb_Slider.thumbsliderclass img {
+    border-radius: rem(5px);
+    opacity: 1;
+  }
+
+  .qv_mainsliderclass {
+    img {
+      border-radius: 0;
+    }
+  }
+
+  .wolfe_VDP_Thumb_Slider.qv_thumbsliderclass img {
+    border-radius: 0;
+  }
+}
+
+[data-site-unique-id='TOYOTASB'],
+[data-site-unique-id='I-10TOYOTA'],
+[data-site-unique-id='TOYOTAOFMIDLAND'] {
+  .blackColorNav {
+    padding-bottom: 2rem;
+
+    .swiper-pagination-bullets {
+      bottom: 0;
+    }
+  }
+}
+
+.HP_reviews_Slider {
+  position: relative;
+  padding: 0 2rem;
+
+  .swiper,
+  .swiper-wrapper {
+    position: static;
+  }
+
+  .swiper-slide {
+    width: 50%;
+    padding: 0 1rem;
+    margin: 0 !important;
+  }
+
+  .reviews-meta {
+    .ratings {
+      display: flex;
+    }
+  }
+}
+
+.slider_Img_Opacity.thumbsliderclass {
+  img {
+    opacity: 1;
+  }
+}
+
+.galleryImgSlider {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    outline: 0;
+    top: unset;
+    bottom: 10px;
+
+    &:after {
+      font-family: 'icomoon';
+      font-size: 2rem;
+      line-height: 1;
+      color: #2ca6d2;
+      font-weight: normal;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+
+    &:after {
+      content: '\e408';
+    }
+  }
+
+  .swiper-button-next {
+    right: 0;
+
+    &:after {
+      content: '\e409';
+    }
+  }
+
+  img {
+    object-fit: cover !important;
+  }
+
+  .swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
+    top: unset;
+    bottom: 0;
+
+    span.swiper-pagination-progressbar-fill {
+      background: #2ca6d2;
+    }
+  }
+}
+
+.swiper-pagination-bg {
+  .swiper-pagination {
+    background-color: #f1f1f1;
+    position: relative;
+    bottom: 0;
+    z-index: 11;
+  }
+}
+
+[data-theme='toyotatheme3'],
+[data-theme='cdjrtheme1'] {
+  @include MQ(500px) {
+    .toyoya_Explore_Vehicle_Slider {
+      .swiper-button-prev {
+        left: 0;
+      }
+
+      .swiper-button-next {
+        z-index: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+[data-site-unique-id='TOYOTAOFMIDLAND'] {
+  .custom-card-slider {
+    margin-block: 2rem;
+
+    .swiper-autoheight {
+      .swiper-wrapper {
+        height: 100% !important;
+      }
+    }
+
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+        background: $primary;
+      }
+    }
+  }
+
+  .thumbsliderclass {
+    .swiper-slide {
+      img {
+        aspect-ratio: 16/9;
+        object-fit: contain;
+      }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .blackColorNav {
+      .swiper-wrapper {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .modal-trim-slider {
+    .swiper-wrapper {
+      justify-content: center;
+    }
+  }
+}
+
+[data-site-unique-id='LANDROVERCERRITOS'],
+[data-theme='jaguar'] {
+  .srp_Banner_Slider {
+    img {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+
+      @include MQ(1024px) {
+        width: 100%;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: transparent;
+      color: $black;
+    }
+  }
+}
+
+[data-theme='jaguar'] {
+  .srp_Banner_Slider {
+    img {
+      width: 92%;
+    }
+  }
+}
+
+[data-theme='toyotatheme4'] {
+  .toyoya_Explore_Vehicle_Slider {
+    .swiper-button-prev {
+      left: calc(50% - 10vw);
+      width: 3.5rem;
+      height: 2.1rem;
+      border-radius: 3rem;
+      background-color: $black;
+
+      @include MQ(900px) {
+        left: calc(50% - 20vw);
+      }
+
+      @include MQ(480px) {
+        left: calc(50% - 30vw);
+      }
+
+      &::after {
+        background-image: url(https://static.foxdealer.com/71/2020/01/slick-arrow-1.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        height: 1rem;
+        width: 1rem;
+        transform: rotatey(180deg);
+        filter: invert(1);
+      }
+    }
+
+    .swiper-button-next {
+      right: calc(50% - 10vw);
+      width: 3.5rem;
+      height: 2.1rem;
+      border-radius: 3rem;
+      background-color: $black;
+
+      @include MQ(900px) {
+        right: calc(50% - 20vw);
+      }
+
+      @include MQ(480px) {
+        right: calc(50% - 30vw);
+      }
+
+      &:after {
+        background-image: url(https://static.foxdealer.com/71/2020/01/slick-arrow-1.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        height: 1rem;
+        width: 1rem;
+        margin: auto;
+        position: absolute;
+        width: 1.875rem;
+        filter: invert(1);
+      }
+    }
+
+    .swiper-slide {
+      img {
+        transform: scale(0.7);
+      }
+    }
+
+    .single_Col_Content {
+      opacity: 0;
+    }
+
+    .swiper-slide-active {
+      .single_Col_Content {
+        opacity: 1;
+      }
+
+      img {
+        transform: scale(1);
+
+        @include MQ(480px) {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
+
+.foxDealer_Slider_Default_Theme {
+  &.arrow_Bottom_Rounded.arrow_Bottom_Rounded.arrow_Bottom_Rounded {
+    padding-inline: 0;
+    margin-block: 1rem;
+    position: relative;
+    z-index: 1;
+
+    .swiper-wrapper:not(.no_Swiper_In_Desktop .swiper-wrapper) {
+      padding-block: 3rem;
+
+      @include MQ(767px) {
+        padding-bottom: 1rem;
+      }
+
+      align-items: center;
+
+      .swiper-slide:not(.no_Swiper_In_Desktop .swiper-wrapper .swiper-slide) {
+        padding-inline: 0;
+      }
+    }
+
+    .swiper-pagination:not(.no_Swiper_In_Desktop .swiper-pagination) {
+      background-color: $grey-lighter;
+      max-width: 800px;
+      margin-inline: auto;
+      border-radius: 2rem;
+      right: 0;
+
+      .swiper-pagination-bullet:not(.no_Swiper_In_Desktop .swiper-pagination .swiper-pagination-bullet) {
+        background-color: transparent;
+        color: $black;
+        transition: 0.2s all ease;
+
+        &.swiper-pagination-bullet-active:not(
+            .no_Swiper_In_Desktop .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active
+          ),
+        &:hover:not(
+            .no_Swiper_In_Desktop .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active
+          ) {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+
+    .custom-paging.custom_Paging_Btn .swiper-button-prev,
+    .custom-paging.custom_Paging_Btn .swiper-button-next {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 2px solid #000;
+      border-radius: 50%;
+      top: auto;
+      bottom: 0;
+      z-index: 100003;
+
+      &:after {
+        content: '';
+        background: url('@resources/svg-icons/right-arrow-short.svg') no-repeat center;
+        width: rem(20px);
+        height: rem(20px);
+        background-size: contain;
+        opacity: 1;
+      }
+    }
+
+    .custom-paging.custom_Paging_Btn .swiper-button-prev {
+      left: calc(50% - 30vw);
+
+      &:after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    .custom-paging.custom_Paging_Btn .swiper-button-next {
+      right: calc(50% - 30vw);
+    }
+  }
+
+  @include MQ_min(769px) {
+    .no_Swiper_In_Desktop.no_Swiper_In_Desktop {
+      .swiper-wrapper {
+        transform: none !important;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .swiper-slide.swiper-slide {
+        max-width: 250px;
+        height: auto;
+        margin-inline: 0 !important;
+
+        img {
+          max-width: 90%;
+        }
+
+        .card_Title {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }
+    }
+  }
+
+  @include MQ(768px) {
+    &.arrow_Bottom_Rounded.arrow_Bottom_Rounded.arrow_Bottom_Rounded {
+      .swiper-button-prev:not(.no_Swiper_In_Desktop .swiper-button-prev),
+      .swiper-button-next:not(.no_Swiper_In_Desktop .swiper-button-next) {
+        display: none;
+      }
+
+      .swiper-slide.swiper-slide {
+        padding-bottom: 1rem;
+      }
+
+      .custom-paging.custom_Paging_Btn .swiper-button-prev {
+        left: 0;
+      }
+
+      .custom-paging.custom_Paging_Btn .swiper-button-next {
+        right: 0;
+      }
+    }
+  }
+}

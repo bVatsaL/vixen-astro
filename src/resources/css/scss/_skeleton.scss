@@ -1,0 +1,31 @@
+@import '@resources/css/scss/variable';
+@import '@resources/css/scss/mixins';
+
+@include keyframes(bg-gradient) {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton_Box {
+  background-color: $grey-lightest;
+  background-image: linear-gradient(90deg, $grey-lightest, $grey-lighter, $grey-lightest);
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  line-height: 1;
+  display: block;
+  width: 100%;
+  animation: bg-gradient 1.2s ease-in-out infinite;
+  min-height: 1rem;
+  border-radius: $border-radius;
+}
+
+
+.canadacadillac{
+  .skeleton_Box{
+    border-radius: 0;
+  }
+}

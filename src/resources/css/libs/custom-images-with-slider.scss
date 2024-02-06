@@ -1,0 +1,106 @@
+@import '../scss/variable';
+@import '../scss/mixins';
+
+.imagesWithSlider {
+
+  .swiper-slide-active .disclaimer-com{
+    display: block;
+  }
+  .disclaimer-com{
+    display: none;
+  }
+
+  .swiper-slide {
+    .imgLink {
+      display: block;
+      position: relative;
+      padding-bottom: 86%;
+      @media (max-width: $dn-md-device) {
+        padding-bottom: 0;
+      }
+      img {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @media (max-width: $dn-md-device) {
+          height: auto;
+          position: relative;
+        }
+      }
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    @media (max-width: $dn-md-device) {
+      display: none;
+    }
+    background: $white;
+    width: rem(39px);
+    height: rem(39px);
+    border-radius: rem(100px);
+    border: rem(1px) solid $black;
+    &::after {
+      font-size: rem(18px);
+      font-weight: $weight-bold;
+      color: $black;
+    }
+    @media (max-width: $dn-xl-device) {
+      width: rem(34px);
+      height: rem(34px);
+      &::after {
+        font-size: rem(14px);
+      }
+    }
+  }
+  .swiper-button-next {
+    right: rem(30px);
+    left: auto;
+    &::after {
+      left: rem(1px);
+      position: relative;
+    }
+    @media (max-width: $dn-xl-device) {
+      right: rem(20px);
+    }
+  }
+  .swiper-button-prev {
+    left: rem(30px);
+    right: auto;
+    &::after {
+      left: rem(-1px);
+      position: relative;
+    }
+    @media (max-width: $dn-xl-device) {
+      left: rem(20px);
+    }
+  }
+  .swiper-pagination {
+    display: none;
+    position: relative;
+    margin-top: rem(20px);
+    @media (max-width: $dn-md-device) {
+      margin-top: rem(30px);
+    }
+    .swiper-pagination-bullet {
+      background: $grey-dark;
+      opacity: 0.2;
+      width: rem(10px);
+      height: rem(10px);
+      &.swiper-pagination-bullet-active {
+        color: $grey-dark;
+        opacity: 0.75;
+      }
+    }
+    @media (max-width: $dn-md-device) {
+      display: block;
+    }
+  }
+  @media (max-width: $dn-md-device) {
+    .swiper-autoheight .swiper-wrapper {
+      height: auto !important;
+    }
+  }
+}

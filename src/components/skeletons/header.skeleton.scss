@@ -1,0 +1,64 @@
+@import '@resources/css/scss/variable';
+@import '@resources/css/scss/mixins';
+
+.flex_center {
+  display: flex;
+  align-items: center;
+}
+
+.action_Bar{
+  padding: rem(10px) 0;
+  background: $grey-lighter;
+  .flex_center{
+    justify-content: space-between;
+  }
+  .text_Box{
+    width: rem(400px);
+  }
+  @include MQ(1024px){
+    display: none;
+  }
+}
+
+.text_Box{
+  height: 1rem;
+}
+
+.header_Contain{
+  padding: rem(15px) 0;
+  .flex_center{
+    gap: rem(10px);
+    flex-wrap: wrap;
+  }
+}
+
+.logo_Box{
+  width: rem(260px);
+  height: rem(50px);
+  flex: 0 rem(260px);
+  @include MQ(767px){
+    flex: 0 rem(200px);
+    height: rem(40px);
+  }
+}
+
+.menu_Contain{
+  gap: rem(10px);
+  flex: 1 auto;
+  .text_Box{
+    width: rem(100px);
+  }
+  @include MQ(1024px){
+    display: none;
+  }
+}
+
+.menu_Btn{
+  display: none;
+  @include MQ(1024px){
+    width: rem(40px);
+    height: rem(40px);
+    display: block;
+    margin-left: auto;
+  }
+}

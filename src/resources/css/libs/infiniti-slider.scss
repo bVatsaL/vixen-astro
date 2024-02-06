@@ -1,0 +1,51 @@
+@import '../scss/variable';
+@import '../scss/mixins';
+
+.infinitibanner {
+  background-image: url('https://static.foxdealer.com/529/2022/06/Model-BG-1024x267-1.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .swiper-button-prev {
+    color: $black;
+    position: absolute;
+    top: 85%;
+    left: 25%;
+  }
+
+  .swiper-button-next {
+    color: $black;
+    position: absolute;
+    top: 85%;
+    right: 25%;
+  }
+}
+
+@media (max-width: 607px) {
+  .infinitibanner {
+    background-image: none;
+
+    .swiper-button-next {
+      top: 50%;
+      right: 5%;
+    }
+    .swiper-button-prev {
+      top: 50%;
+      left: 5%;
+    }
+  }
+}
+@media (min-width: 607px) and (max-width: 880px) {
+  .infinitibanner {
+    .swiper-button-next {
+      top: 85%;
+      right: 10;
+    }
+    .swiper-button-prev {
+      top: 85%;
+      left: 10;
+    }
+  }
+}

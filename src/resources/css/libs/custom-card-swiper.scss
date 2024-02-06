@@ -1,0 +1,118 @@
+@import '../scss/variable';
+@import '../scss/mixins';
+
+.custom-card-slider {
+  width: 90%;
+  margin: auto;
+  padding: inherit;
+
+  .swiper-wrapper{
+    align-items: stretch;
+  }
+
+  .swiper-slide{
+    height: auto;
+  }
+
+  .swiper-button-next {
+    right: rem(-24px);
+  }
+
+  .swiper-button-prev {
+    left: rem(-24px);
+  }
+
+  .swiper-pagination {
+    bottom: inherit;
+    .swiper-pagination-bullet {
+      background: $grey-dark;
+      width: rem(10px);
+      height: rem(10px);
+      &.swiper-pagination-bullet-active {
+        color: $grey-dark;
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .custom-card-slider {
+    width: 80%;
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: block;
+    }
+  }
+}
+
+[data-site-unique-id='CLAREMONTTOYOTA'],
+[data-site-unique-id='JOSEPHTOYOTA'],
+[data-site-unique-id='JOHNSONCITYTOYOTA'] {
+  .custom-card-slider {
+    width: 100%;
+    @include MQ(880px) {
+      width: 80%;
+    }
+    .swiper {
+      padding: 12px;
+    }
+    .swiper-pagination {
+      margin-top: 20px;
+      .swiper-pagination-bullet {
+        background: #af0d14;
+      }
+    }
+  }
+}
+
+[data-theme='landrover']{
+  .custom-card-slider {
+    width: 100%;
+    @include MQ(880px) {
+      width: 80%;
+    }
+    @include MQ(575px) {
+      width: 100%;
+      padding: 0;
+    }
+    .swiper {
+      padding: 12px;
+    }
+    .swiper-pagination {
+      margin-top: 20px;
+      .swiper-pagination-bullet {
+        background: $primary;
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1;
+      @include MQ(575px) {
+        display: none;
+      }
+      &:after {
+        font-family: 'icomoon';
+        font-size: 3rem;
+        line-height: 1;
+        text-shadow: 0 0 1px #000;
+        color: $white;
+        font-weight: normal;
+      }
+    }
+    .swiper-button-prev {
+      left: -30px;
+      &:after {
+        content: '\e408';
+        color: #000;
+      }
+    }
+    .swiper-button-next {
+      right: -30px;
+      &:after {
+        content: '\e409';
+        color: #000;
+      }
+    }
+  }
+}

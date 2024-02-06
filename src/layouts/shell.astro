@@ -1,0 +1,48 @@
+---
+import Header from '@components/header';
+
+interface Props {
+	title: string;
+  siteName: string;
+  siteUrl: string;
+  headerBg: string;
+}
+
+const { title, siteName, siteUrl, headerBg } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+    <meta name='application-name' content={siteName} />
+    <meta property='og:site_name' content={siteName} />
+    <meta name='generator' content='ReactPWA' />
+    <meta name='rating' content='General' />
+    <meta name='mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='#000' />
+    <meta name='apple-mobile-web-app-title' content={siteName} />
+    <meta name='msapplication-tooltip' content={siteName} />
+    <meta name='msapplication-starturl' content='/' />
+    <meta name='msapplication-TileColor' content='#fff' />
+    <meta name='renderer' content='webkit|ie-comp|ie-stand' />
+    <meta name='full-screen' content='yes' />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta property='og:type' content='article' />
+    <meta property='og:url' content={siteUrl} />
+    <meta name='theme-color' content={headerBg} />
+    <meta name='google-site-verification' content='JsVnetQjvIaK0Ql1ZUWfh2GMkaNSqCMNiNC4kcrRPS8' />
+    <link
+      rel='icon'
+      type='image/png'
+      sizes='32x32'
+      href='https://static.foxdealer.com/614/2020/08/cropped-White-1-e1598887399658-32x32.png'
+    />
+		<title>{title}</title>
+	</head>
+	<body>
+    <Header />
+		<slot />
+	</body>
+</html>

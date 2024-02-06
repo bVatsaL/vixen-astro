@@ -1,0 +1,48 @@
+@import '../scss/mixins';
+@import '../scss/variable';
+.key-feature-carousal {
+    .swiper {
+        padding: 0 30px 30px 30px;
+    }
+    .swiper-button-next {
+        right: rem(-7px);
+    }
+    .swiper-button-prev {
+        left: rem(-7px);
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-family: swiper-icons;
+        font-size: rem(25px) !important;
+        text-transform: none !important;
+        letter-spacing: 0;
+        font-variant: initial;
+        line-height: 1;
+        color: #696969;
+    }
+    .swiper-pagination {
+        display: none;
+    }
+    @media (max-width: 639px) {
+        .swiper-pagination {
+            display: block;
+            position: relative;
+            margin-top: 15px;
+        }
+        .swiper-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            bottom: 0px !important;
+            left: 0;
+            width: 100%;
+        }
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+        }
+        .swiper-pagination-bullet-active {
+            background: #0d0d0d;
+        }
+    }
+}
