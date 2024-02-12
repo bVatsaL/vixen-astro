@@ -1,0 +1,245 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.controlTab {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.custom_Tab {
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+
+.flexrow {
+  display: flex;
+  border-bottom: 1px solid;
+  gap: 5px;
+  @media (max-width: 880px) {
+    display: none;
+  }
+}
+.tab_btn {
+  border-top-right-radius: $border-radius;
+  background-color: $grey-lighter;
+  border-top-left-radius: $border-radius;
+  outline: 1px solid $grey-lighter;
+  padding: rem(8px);
+  margin: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  &.active,
+  &:hover {
+    background-color: $primary;
+    color: $white;
+    border-color: $primary;
+  }
+}
+.contact-Hours-Tab {
+  &.active {
+    background-color: #191919;
+    color: $white;
+    border: 1px solid transparent;
+    outline: 0;
+  }
+}
+
+.contact_Hours_Tab_Mobile.contact_Hours_Tab_Mobile {
+  background-color: #efefef;
+  font-size: 0.65rem;
+  padding: 0.3rem 0;
+  color: #0a0a0a;
+  border: transparent;
+  border-radius: 0;
+  outline: transparent;
+  &::after {
+    display: inline-block;
+    content: '>';
+    padding-left: 0.3em;
+    transition: transform 0.15s;
+  }
+  &.hover,
+  &.active {
+    background-color: #efefef;
+    color: #0a0a0a;
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.tab-btn-verticle {
+  border-radius: 0;
+  flex: 1;
+}
+.no-spacing {
+  .flexrow {
+    p {
+      margin: 0;
+      border: 1px solid $grey;
+      border-bottom: 0;
+    }
+  }
+}
+
+.vertical-style {
+  display: flex;
+  align-items: flex-start;
+  .flexrow {
+    display: block;
+    flex: 0 0 165px;
+    border-bottom: 0;
+    @media (max-width: 880px) {
+      display: none;
+    }
+    p {
+      border-radius: 0;
+    }
+  }
+  .outlet {
+    width: 100%;
+  }
+}
+.mobileBtn {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(10px) rem(10px);
+  background: $grey-lightest;
+  margin-bottom: rem(10px);
+  &::after {
+    content: '';
+    display: block;
+    background: url('@resources/svg-icons/minus.svg') no-repeat;
+    width: $size-4;
+    height: $size-4;
+  }
+  &.active {
+    &::after {
+      background: url('@resources/svg-icons/plus.svg') no-repeat;
+    }
+  }
+
+  @media (max-width: 880px) {
+    display: flex;
+  }
+}
+
+.horizontal-scroll-style {
+  .flexrow {
+    display: flex;
+    overflow: auto;
+    flex: auto;
+  }
+  .mobileBtn {
+    display: none;
+  }
+}
+
+.vehicle_price {
+  font-size: rem(17px);
+  color: #495057;
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  strong {
+    font-weight: $weight-semibold;
+    display: block;
+  }
+  &:hover {
+    background: $white;
+    color: $black;
+  }
+  &.active {
+    background: $white;
+    color: $black;
+  }
+}
+
+// explore all vehicles price tab
+
+.vehicleTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $size-6;
+  img {
+    height: 2.8rem;
+    filter: grayscale(1);
+  }
+  p {
+    background-color: unset;
+    padding: 0;
+    outline: none;
+    margin: 0 $size-6;
+    &:hover,
+    &.active {
+      background-color: unset;
+    }
+    &.active {
+      img {
+        filter: none;
+      }
+    }
+  }
+}
+// .chevImgWidth{
+//   img{
+//     width: 17rem;
+//   }
+// }
+// .gmcImgWidth{
+//   img{
+//     width: 11rem;
+//   }
+// }
+// .buickImgWidth{
+//   img{
+//     width: 10rem;
+//   }
+// }
+.explore_Vehicles_Slider {
+  @include MQ($dn-md-device) {
+    display: none;
+  }
+}
+
+.flexrow {
+  .tabItem_Hover {
+    &.active {
+      background-color: $black;
+    }
+  }
+}
+[data-theme='jaguar'] {
+  .mobileBtn {
+    font-weight: 600;
+    font-family: 'Proxima Nova';
+    font-size: rem(14px);
+    line-height: rem(18px);
+    &.active {
+      &:after {
+        filter: invert(1);
+      }
+    }
+  }
+}
+.features_Tab{
+  &.active{
+    background: #252e33;
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+[data-site="cincinnatilandrover"] {
+  .mobileBtn {
+    @media (max-width: 880px) {
+      display: none;
+    }
+  }
+}

@@ -86,7 +86,7 @@ export const fetchSiteConfig = async () => {
         `https://${siteSlug}.foxdealersites.com`,
       ];
       const templateTagsUrl = new URL(endpointBase);
-      templateTagsUrl.searchParams.append('api', import.meta.env.TEMPLATE_TAGS_API_KEY);
+      templateTagsUrl.searchParams.append('api', import.meta.env.TEMPLATE_TAGS_API_KEY || 'XY94g8gzwfFmjQSd8zFEF4h8H38bBUjU');
       templateTagsUrl.searchParams.append('raw_json', 'true');
       templateTagsUrl.searchParams.append('show_template_tags', 'true');
       templateTagsUrl.searchParams.append('options[]', 'fdi_secondary_sorting');

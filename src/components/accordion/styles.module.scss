@@ -1,0 +1,83 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.accordion_Title {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  color: $black;
+  transition: all 0.2s ease-in;
+  padding: 0.5rem 0;
+  text-transform: capitalize;
+  font-size: rem(16px);
+  line-height: rem(24px);
+  font-weight: $weight-normal;
+  &:hover,
+  &:focus {
+    color: #89120b;
+  }
+  p,
+  p.accordion_Title_Text {
+    margin-bottom: 0;
+  }
+}
+.accordion_Content {
+  transition: all 0.2s ease-in;
+  display: none;
+  border-top: 0;
+  font-weight: $weight-normal;
+  color: $black;
+  margin-bottom: rem(16px);
+  // user-select: none;
+}
+.accordion_Item {
+  border-bottom: rem(2px) solid #ccc;
+  &.active {
+    .accordion_Content {
+      display: block;
+    }
+    .accordion_Icon::after {
+      content: '\2013';
+    }
+  }
+}
+
+.accordion_Icon::after {
+  content: '\002B';
+  display: block;
+  font-size: rem(20px);
+  font-weight: initial;
+}
+
+.font_Color {
+  color: $grey;
+}
+
+.no_Padding_Style {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+[data-site-unique-id='CLAREMONTTOYOTA'],
+[data-site-unique-id='TOYOTAHUNTINGTONBEACH'],
+[data-site-unique-id='JOHNSONCITYTOYOTA'] {
+  .accordion_Item {
+    .accordion_Icon::after {
+      transition: transform 0.5s;
+      font-size: 1rem;
+    }
+    &.active {
+      .accordion_Icon::after {
+        content: '+';
+        transform: translatey(-20%) rotatez(135deg);
+        display: block;
+        font-size: 1rem;
+        font-weight: initial;
+        transition: transform 0.5s;
+      }
+    }
+  }
+}

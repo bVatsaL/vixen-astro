@@ -1,4 +1,4 @@
-import {
+import type {
   AggregationRecord,
   AggregationRecordWithSelected,
   Aggregations,
@@ -7,7 +7,7 @@ import {
   SearchResultItem,
   VehicleResponse,
 } from '@typedefs/search';
-import { VehicleComputedFields } from '@typedefs/vehicle';
+import { type VehicleComputedFields } from '@typedefs/vehicle';
 import cloneDeep from 'lodash/cloneDeep';
 import { getValidAggreagtionKeysbySiteName } from './aggregation.util';
 

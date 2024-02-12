@@ -1,0 +1,125 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.contentCenter {
+  text-align: center;
+  margin: rem(32px);
+}
+
+.toolTip{
+  position: relative;
+  color: $black;
+  font-size: rem(16px);
+  // display: inline-block;
+}
+
+.tooltip_Content{
+  position: absolute;
+  z-index: 2;
+  min-width: 16rem;
+  background-color: $grey-darker;
+  color: $white;
+  font-family: inherit;
+  font-size: rem(11px);
+  font-weight: normal;
+  padding: rem(5px);
+  border-radius: rem(6px);
+  text-align: center;
+  display: none;
+  isolation: isolate;
+  &:after {
+    position: absolute;
+    content: " ";
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: $grey-darker;
+    transform: translate(-50%, 50%) rotate(45deg);
+    border-width: 2px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-radius: 2px;
+    border-color: $grey-darker;
+    z-index: -1;
+  }
+}
+
+[data-theme='newtoyota']{
+  .researchPage_Section .toolTip{
+    &[data-position='bottom']{
+      .tooltip_Content{
+        top: calc(100%);
+        max-height: 200px;
+        overflow: scroll;
+      }
+    }
+    &[data-position='top']{
+      .tooltip_Content{
+        bottom: calc(100%);
+        max-height: 200px;
+        overflow: scroll;
+      }
+    }
+  }
+}
+
+.toolTip{
+  &:hover .tooltip_Content{
+    display: block;
+  }
+  &[data-position='top']{
+    .tooltip_Content{
+      bottom: calc(96% + 0.8rem);
+      left: 50%;
+      // right: -2rem;
+      transform: translate(-50%, 0);
+      width: 100%;
+      &:after{
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%) rotate(45deg);
+      }
+    }
+  }
+  &[data-position='bottom']{
+    .tooltip_Content{
+      top: calc(96% + 0.8rem);
+      // left: -2rem;
+      // right: -2rem;
+      min-height: min-content;
+      width: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      &:after{
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+  }
+  &[data-position='left']{
+    .tooltip_Content{
+      right: calc(96% + 0.7rem);
+      top: 50%;
+      transform: translate(0, -50%);
+      &:after{
+        right: 0;
+        transform: translate(50%, -50%) rotate(45deg);
+      }
+    }
+  }
+  &[data-position='right']{
+    .tooltip_Content{
+      left: calc(96% + 0.7rem);
+      top: 50%;
+      transform: translate(0, -50%);
+      &:after{
+        left: 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+  }
+}
+
+[class|='financeIncentiveDisclaimer__detailed_d_None']{
+  display: none;
+}

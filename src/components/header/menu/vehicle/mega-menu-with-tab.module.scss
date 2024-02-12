@@ -1,0 +1,74 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+@include MQ_min(1025px) {
+  .tab_Row {
+    display: flex;
+    cursor: pointer;
+    flex-wrap: wrap;
+    justify-content: center;
+    .tab_Item {
+      padding-inline: 0.5rem;
+      border: 1px solid $primary;
+      border-width: 0 1px 0 0;
+      width: calc(100% / 6);
+      font-size: 0.8rem;
+      &:first-child {
+        border-left-width: 1px;
+      }
+      .tab_Menu {
+        background-color: transparent;
+        color: $primary;
+        text-transform: capitalize;
+        outline: 0;
+        border-radius: 0;
+        text-align: center;
+        font-weight: 400;
+        position: relative;
+        &:after {
+          content: '';
+          width: 100%;
+          height: 4px;
+          background-color: #a8a8a8;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: transform 0.3s ease;
+          transform: scaleX(0);
+        }
+        &.active {
+          font-weight: 600;
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+      &:hover {
+        .tab_Menu {
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+  .mega_Menu_Container.mega_Menu_Container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-block: rem(16px);
+  }
+  .tab_Content_Container {
+    .tab_Content.tab_Content {
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      &.open_Tab {
+        display: flex;
+      }
+    }
+    .category_Item {
+      flex: 0 0 250px;
+      max-width: 33.33%;
+      padding: rem(10px);
+    }
+  }
+}

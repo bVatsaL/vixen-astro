@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 import { Link } from '@components/link';
 
 interface INavBanner {

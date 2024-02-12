@@ -1,6 +1,6 @@
 import { filterData } from '@utils/data.util';
 import jsonFetch, { FetchError } from '@utils/json-api.util';
-import { GetRecoilValue, atom } from 'recoil-ssr';
+import { type GetRecoilValue, atom } from 'recoil-ssr';
 import { getCache } from 'vixen-cache';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
@@ -26,7 +26,7 @@ export const syncDataAtom = atom({
 
 export const cacheAtom = atom({
   key: 'cacheAtom',
-  default: getCache(),
+  // default: getCache(),
 });
 
 function base64Decode(str: string) {
@@ -137,32 +137,32 @@ export const cachedFetch = async (
    * Background fetching should only happen once in x number of servers
    * thus using request vars won't work
    */
-  const bgDataFetch = async () => {
-    try {
-      if (await persistentCache.has(`${id}__lock`)) {
-        return;
-      }
-      await persistentCache.set(`${id}__lock`, true, { ttl: 60000 });
-      // Fetch data save that data in cache
-      const data = await fetchData();
-      await persistentCache.set(id, data);
-      await persistentCache.del(`${id}__lock`);
-    } catch {
-      // if an error occurs in execution of fetchData, we should remove the lock
-      await persistentCache.del(`${id}__lock`);
-    }
-  };
+  // const bgDataFetch = async () => {
+  //   try {
+  //     if (await persistentCache.has(`${id}__lock`)) {
+  //       return;
+  //     }
+  //     await persistentCache.set(`${id}__lock`, true, { ttl: 60000 });
+  //     // Fetch data save that data in cache
+  //     const data = await fetchData();
+  //     await persistentCache.set(id, data);
+  //     await persistentCache.del(`${id}__lock`);
+  //   } catch {
+  //     // if an error occurs in execution of fetchData, we should remove the lock
+  //     await persistentCache.del(`${id}__lock`);
+  //   }
+  // };
 
-  const fetchFromCache = async () => {
-    if (await persistentCache.has(id)) {
+  // const fetchFromCache = async () => {
+  //   if (await persistentCache.has(id)) {
       
-      const data = await persistentCache.get(id);
-      // Fetch in background
-      bgDataFetch();
-      return data;
-    }
-    return null;
-  };
+  //     const data = await persistentCache.get(id);
+  //     // Fetch in background
+  //     bgDataFetch();
+  //     return data;
+  //   }
+  //   return null;
+  // };
 
   const withSyncData = (data: any) => {
     if (data && typeof window === 'undefined') {
@@ -173,12 +173,12 @@ export const cachedFetch = async (
 
   const process = async () => {
     
-    const cachedData = await fetchFromCache();
+    // const cachedData = await fetchFromCache();
 
-    if (cachedData) {
+    // if (cachedData) {
       
-      return withSyncData(cachedData);
-    }
+    //   return withSyncData(cachedData);
+    // }
 
     if (options?.returnError) {
       

@@ -1,0 +1,49 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.compareVehicle_Wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.compareVehicle_Img{
+  max-width: 100px;
+  min-height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.compareVehicle_Titles_Wrap{
+  text-align: center;
+  flex-grow: 1;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.compareVehicle_Title{
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.compareVehicle_Subtitle{
+  font-size: 0.9em;
+}
+
+.compareVehicle_Details{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.55em;
+}
+
+.compareVehicle_Btn_Wrap{
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.compareVehicle_Btn{
+  padding: 0.6em;
+  border-radius: 15px;
+}

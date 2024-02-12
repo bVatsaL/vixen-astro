@@ -1,0 +1,41 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.keyfeature_container {
+  padding: 0 0.3125rem 0 0.3125rem;
+}
+.key_featurestitle {
+  font-weight: 400;
+  font-size: 1rem;
+}
+.keyfeature_Items_List {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+}
+.keyfeature_Item {
+  display: block;
+  img {
+    display: block;
+    width: rem(28px);
+  }
+}
+
+.gray_Img {
+  img {
+    opacity: 0.5;
+  }
+}
+.mobile_Keyfeature_Container {
+  @include MQ(450px) {
+    width: 60%;
+    margin-left: auto;
+  }
+}
+
+.content_Wid {
+  min-width: max-content;
+}

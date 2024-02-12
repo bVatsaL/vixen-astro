@@ -1,0 +1,19 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.call_Direction_Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary;
+  cursor: pointer;
+  color: $white;
+  padding: $size-normal;
+  flex: 1;
+  gap: $size-small;
+  font-size: $size-medium;
+  img{
+    width: $size-medium;
+    aspect-ratio: auto 20 / 20;
+  }
+}

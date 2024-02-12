@@ -1,4 +1,5 @@
-import { pick, get, set } from 'lodash';
+import { pick, get, set } from 'lodash-es';
+// import _ from 'lodash';
 
 export const filterData = (data: Record<any, any> | any[], validFields: string[]) => {
   if (Array.isArray(data)) {

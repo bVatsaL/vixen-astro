@@ -1,0 +1,547 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.card {
+  padding: rem(10px);
+  border-radius: rem(5px);
+  display: block;
+  text-align: center;
+  color: $black;
+  @include hover {
+    text-decoration: underline;
+    .card_Img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.card_Img {
+  display: block;
+  margin: 0 auto 0.5rem;
+  transition: transform 0.2s ease;
+  width: 100%;
+  aspect-ratio: 2;
+  object-fit: contain;
+  object-position: center;
+}
+
+.card_Title {
+  font-weight: bold;
+  font-size: $size-large;
+  line-height: 1;
+}
+
+[data-site='rockhillnissan'] {
+  .card_sm .card_Title {
+    span {
+      display: none;
+    }
+  }
+}
+
+.card_Price,
+.card_Stock {
+  font-size: $size-normal;
+  line-height: 1;
+  @include MQ(1160px) {
+    font-size: $size-small;
+  }
+}
+
+.card_Price {
+  margin-bottom: rem(6px);
+  white-space: nowrap;
+}
+
+.card_Stock {
+  margin-bottom: 0;
+}
+
+.card_sm {
+  .card_Title {
+    font-size: $size-normal;
+    margin-bottom: rem(4px);
+  }
+
+  .card_Price,
+  .card_Stock {
+    font-size: $size-small;
+  }
+}
+
+.canada_Cadillac_Card {
+  .card_Title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    @media screen and (min-width: 73em) {
+      font-size: 1.2rem;
+    }
+  }
+  .card_Title,
+  .card_Stock,
+  .card_Price {
+    font-family: 'CadillacGothicWide', 'Cadillac_Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+.card_Title_Capitalize {
+  .card_Title {
+    text-transform: uppercase;
+  }
+}
+[data-site='tubmanchev'] {
+  .card_Title_Capitalize {
+    .card_Price {
+      font-size: 0.8rem;
+    }
+  }
+}
+.btn_Section {
+  display: flex;
+  gap: rem(24px);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: rem(24px);
+}
+.btn_Md.btn_Md {
+  padding: rem(10px) rem(30px);
+  font-weight: 700;
+}
+.outline_Dark_Gray.outline_Dark_Gray {
+  border-color: var(--contactNavbar);
+}
+
+.card_Title_noWrap {
+  .card_Title {
+    white-space: nowrap;
+  }
+}
+.vehicle_Inventory_Card {
+  .card_Title {
+    text-transform: uppercase;
+  }
+}
+
+.card_Range_Rover {
+  position: relative;
+  padding: 1rem rem(11px) 0;
+  font-size: 0.85rem;
+  max-width: 274px;
+  &:hover {
+    text-decoration: none;
+    .card_Stock {
+      display: block;
+    }
+    .card_Img {
+      transform: scale(1);
+    }
+  }
+  .card_Title {
+    font-size: 1em;
+    margin-top: 0.3em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .card_Stock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #000;
+    color: $white;
+    font-size: 1.1em;
+    background: #26292b;
+    color: #fefefe;
+    font-weight: 600;
+    padding: 0.25em;
+    display: none;
+  }
+  .card_Img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    transition: transform 0.2s;
+    backface-visibility: hidden;
+    transform-origin: center;
+    object-fit: cover;
+    object-position: center;
+    padding-inline: 5px;
+    @include aspect(280, 148);
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  .card_Sub_Title {
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
+    min-height: 3em;
+  }
+}
+.stock_Visible_On_Hover {
+  position: relative;
+  &:hover {
+    text-decoration: none;
+    .card_Stock {
+      display: block;
+    }
+  }
+  [data-theme='jaguar'] & {
+    .card_Title,
+    .card_Stock {
+      font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+    }
+  }
+  [data-theme='mercedesbenz'] & {
+    .card_Title {
+      font-family: var(--font-secondary);
+      font-weight: 400;
+      font-size: rem(13px);
+      @include MQ_min(87em) {
+        font-size: 1.1rem;
+      }
+    }
+    .card_Price {
+      color: rgba($black, 0.8);
+      font-size: rem(11px);
+    }
+  }
+  .card_Title {
+    text-transform: uppercase;
+    font-size: 13px;
+    @include MQ_min(87em) {
+      font-size: 1.1rem;
+    }
+  }
+  .card_Stock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $white;
+    font-size: 1.1em;
+    background: #1e1e1e;
+    color: #fefefe;
+    padding: 0.25em;
+    display: none;
+  }
+}
+
+// .card_Style_LandRover {
+//   display: flex;
+//   flex-flow: column wrap;
+//   .card_Img {
+//     flex: 1 0 100%;
+//   }
+//   .card_Title {
+//     flex: 0 0 auto;
+//   }
+// }
+
+.product_Info {
+  color: black;
+  transition: 0.2s;
+  display: block;
+  text-align: center;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.card_Two_Column {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0;
+  @include hover {
+    text-decoration: none;
+  }
+  .card_Title {
+    font-size: 0.8em;
+    margin-top: 0.35em;
+    font-weight: normal;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .card_Sub_Title {
+    font-size: 0.75em;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .card_Img {
+    max-width: 150px;
+    padding: 0 1rem;
+    margin: 0;
+  }
+
+  .card_Info_Wrap {
+    text-align: left;
+    font-size: 0.85rem;
+  }
+
+  .card_Stock {
+    opacity: 0.8;
+    font-size: 0.65em;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+  @include MQ(1024px) {
+    flex-direction: column;
+    text-align: center;
+    .card_Img {
+      margin: 0 auto;
+    }
+    .card_Info_Wrap {
+      text-align: center;
+    }
+  }
+}
+[data-site-unique-id='MONROVIACDJR'] {
+  .card_Img {
+    @include MQ(650px) {
+      max-width: 87%;
+    }
+  }
+}
+[data-site-unique-id='TOYOTASB'] {
+  .card_Img {
+    @include MQ(650px) {
+      max-width: 92%;
+    }
+  }
+}
+.starting_Price,
+.request_Now {
+  font-size: 0.8em;
+}
+
+.request_Now {
+  color: #eb0a1e;
+  font-family: 'Toyota_Type', Helvetica Neue, sans-serif;
+}
+
+.full_Height_Img_Left_Content_Right,
+.full_Height_Img_Left_Content_Rightv2 {
+  display: flex;
+  align-items: stretch;
+  // aspect-ratio: 428/236;
+  padding: 0;
+  text-align: left;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 100%;
+  &:hover {
+    .card_Img {
+      transform: scale(1);
+    }
+  }
+  .card_Img {
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    max-width: 100% !important;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .card_Img_Column {
+    width: 55%;
+  }
+  .card_Content_Column {
+    flex: 1;
+    padding: 1rem;
+    background: grey;
+    color: #fff;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card_Content_Bottom {
+    margin-top: auto;
+  }
+
+  .card_Category,
+  .card_Title,
+  .card_Sub_Title {
+    display: block;
+  }
+
+  .card_Category,
+  .card_Sub_Title {
+    font-size: 0.75rem;
+  }
+  .card_Title {
+    font-size: 1rem;
+  }
+
+  .card_Stock {
+    position: static;
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    font-size: 1.1rem;
+    strong {
+      font-weight: normal;
+    }
+  }
+}
+.link_Btn.link_Btn.link_Btn {
+  padding: rem(2px) 0.75rem;
+  font-size: 0.7rem;
+}
+
+.full_Height_Img_Left_Content_Rightv2 {
+  .card_Content_Column {
+    justify-content: center;
+    gap: 5px;
+  }
+  .card_Content_Bottom {
+    margin-top: 0;
+  }
+  .card_Stock,
+  .starting_Price {
+    font-size: 0.65rem;
+    margin: 0.5rem 0;
+  }
+}
+
+[data-site-unique-id='HONDASIERRA'] {
+  .card_Img {
+    width: 80%;
+    margin-bottom: rem(2px);
+  }
+  .card_Title {
+    font-size: rem(14px);
+    font-weight: 600;
+
+    span {
+      font-size: 11px;
+      font-weight: 400;
+      color: #212529;
+    }
+  }
+  .card {
+    padding: 0.3rem 0.625rem;
+    @include hover {
+      text-decoration: none;
+    }
+  }
+}
+[data-site='mygastonianissan'] {
+  .font_sm_title {
+    .card_Price {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Used In GMC Theme 1                            */
+/* -------------------------------------------------------------------------- */
+.card_Theme_1 {
+  &:hover {
+    text-decoration: none;
+    .card_Img {
+      transform: scale(1);
+    }
+  }
+  .card_Img {
+    margin-bottom: 1rem;
+  }
+  .card_Sub_Title {
+    text-transform: uppercase;
+  }
+  .starting_Price {
+    font-size: rem(12px);
+  }
+}
+
+[data-theme='toyotatheme3'], [data-theme='cdjrtheme1'] {
+  .card_Content_Bottom {
+    margin-top: inherit;
+  }
+}
+
+[data-site-unique-id='TOYOTAOFLASVEGAS']{
+  @include MQ(1024px) {
+    .used_Jellybean_Card.used_Jellybean_Card {
+      background: transparent;
+      .starting_Price {
+        display: none;
+      }
+    }
+  }
+  .card_Category {
+    display: none;
+  }
+}
+
+.single_Img_Center_Content_Container {
+  display: block;
+  @include hover {
+    .card_Img {
+      transform: scale(1);
+    }
+  }
+  .card_Title {
+    display: block;
+    text-transform: capitalize;
+  }
+  .single_Col_Inventory_Content {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    @include MQ (560px) {
+      display: block;
+      text-align: center;
+    }
+  }
+  .product_Info_Single_Col {
+    background: $primary;
+    padding: 0.84rem 2rem;
+    border-radius: 3rem;
+    color: $white;
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+    @include MQ (1200px) {
+      font-size: 1rem;
+    }
+    @include MQ (1060px) {
+      font-size: 0.9rem;
+      padding: 0.64rem 1rem;
+      width: auto;
+    }
+  }
+  .single_Col_Btn_Container {
+    @include MQ (560px) {
+      padding-top: 2rem;
+      .product_Info_Single_Col {
+        width: auto;
+        margin: 0 auto;
+        display: table;
+      }
+    }
+  }
+  .card_Img {
+    width: 100%;
+  }
+  .card_Category {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    display: block;
+    font-weight: 400;
+  }
+}

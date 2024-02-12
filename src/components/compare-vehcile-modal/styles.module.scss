@@ -1,0 +1,139 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.container_Wrap{
+  width: 100%;
+  height: 95%;
+  @include MQ(1024px){
+    overflow: auto;
+    @include scrollbars(5px, 0, 4px, transparent, $grey-lighter, $grey);
+  }
+}
+.container{
+  height: 100%;
+  @include MQ(1024px){
+    min-width: 1024px;
+    *{
+      user-select: none;
+    }
+  }
+}
+.heading {
+  font-size: rem(33px);
+  font-weight: 400;
+  text-align: center;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+.table_Wrapper {
+  width: 100%;
+	height: 100vh;
+}
+
+// .label_List {
+//   font-size: rem(17px);
+//   text-transform: capitalize;
+//   font-weight: 800 !important;
+//   padding: 14px;
+//   width: 20%;
+//   border-right: none;
+// }
+
+.items_List {
+  th {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    padding: 14px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
+
+.highlight_Section{
+	padding: 0.5em;
+	font-size: 1.2em;
+	font-weight: 800;
+	background: #eee;
+}
+
+.table_Body{
+	height: 75vh;
+}
+.table_Head{
+	height: 25vh;
+	box-shadow: rgb(0 0 0 / 15%) 0px 2px 2px 2px;
+	background: white;
+	position: sticky;
+	top: 0;
+}
+
+.compareVehicles_Items_Header{
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 2px 2px;
+  background: $white;
+}
+
+.compareVehicles_Content_Wrap{
+  height: calc(100% - 300px);
+  overflow-y: scroll;
+  font-size: 0.9em;
+  @include scrollbars(5px, 0, 4px, transparent, $grey-lighter, $grey);
+  // @include MQ(1024px){
+  //   height: 600px;
+  // }
+}
+
+.compareVehicles_Items_Wrap,
+.compareVehicles_Items_Priority_Options_Wrap{
+  padding: 0;
+}
+
+.compareVehicle_Item,
+.compareVehicles_Priority_Option_Item_Wrap{
+  text-align: center;
+  margin: 0;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &:not(:last-child){
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+  }
+}
+
+.compareVehicle_Item_Title{
+  text-transform: capitalize;
+  font-weight: 800;
+  padding: 1em;
+  text-align: left;
+}
+
+.compareVehicle_Item_Value{
+  text-align: center;
+  padding: 1em 0;
+  &:not(:last-child){
+    border-right: 1px solid #eee;
+  }
+  &.compareItem_Best{
+    color: #559c56;
+    font-weight: bold;
+  }
+}
+
+.compareItem_Best{
+  color: #559c56;
+  font-weight: bold;
+}
+
+.compareVehicles_Items_Priority_Options_Title{
+  padding: 0.5em;
+  font-size: 1.2em;
+  font-weight: 800;
+  background: #eee;
+}
+
+.checkbox_Item{
+  width: 24px;
+  height: 24px;
+}

@@ -1,4 +1,5 @@
-import { FallbackProps, useCookies } from 'react';
+import { type FallbackProps} from 'react-error-boundary';
+import { useCookies } from 'react-cookie';
 import { type FC, useEffect } from 'react';
 
 export const ErrorFallback: FC<FallbackProps> = ({ resetErrorBoundary }) => {

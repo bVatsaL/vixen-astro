@@ -1,7 +1,7 @@
 import {
-  ChangeEventHandler,
-  FormEventHandler,
-  KeyboardEventHandler,
+  type ChangeEventHandler,
+  type FormEventHandler,
+  type KeyboardEventHandler,
   useCallback,
   useEffect,
   useMemo,
@@ -23,7 +23,7 @@ import { getInventoryUrl } from '@utils/inventory.util';
 import { useLocation, useNavigate, useParams } from '@reactpwa/core';
 import { withLang } from '@utils/language.util';
 import { trackAscEvent, trackGetDirections, trackTypedSearch } from '@utils/analytics.util';
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 import { isValidVin } from '@components/compare-vehicles';
 import { searchRestrictByTypeAtom } from '@atoms/settings.atom';
 

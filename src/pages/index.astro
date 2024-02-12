@@ -1,15 +1,25 @@
 ---
+import { RecoilRoot } from 'recoil-ssr';
 import Header from '@components/header';
+//  import LazyHudsonHeader from '@components/header/header.tsx'
 import Shell from '../layouts/shell.astro';
 import { fetchSiteConfig } from '../services/site-config'
 
-const siteConfig = await fetchSiteConfig();
-globalThis.siteConfig = siteConfig;
 
+const siteConfig = await fetchSiteConfig();
+(globalThis as any).siteConfig = siteConfig;
+console.log(siteConfig, 'siteConfig');
 const {} = Astro.params;
 ---
 
-<Shell title="Welcome to Astro." headerBg='' siteName='' siteUrl=''>
-	<Header client:load />
+<RecoilRoot>
+<Shell 
+	   title="Welcome to Astro." 
+	   headerBg= useRecoilValue(headerBgColorAtom); 
+	   siteName=useRecoilValue(siteNameAtom);
+	   siteUrl=useRecoilValue(siteUrlAtom);
+>
 	"/": Home Page
+	<Header />
 </Shell>
+</RecoilRoot>

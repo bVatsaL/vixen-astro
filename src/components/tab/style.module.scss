@@ -1,0 +1,14 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+@media (min-width: 880px) {
+  .mobileView {
+    display: none;
+  }
+}
+
+@media (max-width: 880px) {
+  .desktopview {
+    display: none;
+  }
+}

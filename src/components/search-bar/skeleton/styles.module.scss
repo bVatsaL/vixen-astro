@@ -1,0 +1,26 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.search_Contain{
+  width: 400px;
+  max-width: 100%;
+  flex:1 auto;
+  display: flex;
+  align-items: center;
+  gap: rem(10px);
+  @include MQ(1024px){
+    flex: 0 100%;
+  }
+}
+
+.search_Input{
+  width: rem(400px);
+  height: 2rem;
+  flex:1;
+}
+
+.search_Btn{
+  width: rem(100px);
+  height: 2rem;
+  border-radius: 2rem;
+}

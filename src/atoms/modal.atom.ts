@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { atom } from 'recoil-ssr';
 
 type ModalState = { state: 'open' | 'close'; props: Record<string, any> };

@@ -1,0 +1,76 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.search_On_Hover_Contain{
+  position: relative;
+  width: rem(36px);
+  height: rem(36px);
+  cursor: pointer;
+  color: $white;
+
+  &:hover{
+    .search_Bar{
+      display: flex;
+    }
+    .icon{
+      background: $white;
+      color: $black;
+    }
+  }
+}
+
+.icon{
+  width: rem(36px);
+  height: rem(36px);
+  color: inherit;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+[data-theme="canadacadillac"]{
+  .icon{
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+.search_Bar{
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 0;
+  display: none;
+  width: 400px;
+  padding: rem(8px);
+  background: $white;
+  z-index: 1;
+}
+
+@include MQ(1024px){
+  .search_On_Hover_Contain{
+    width: auto;
+    height: auto;
+  }
+  .icon{
+    display: none;
+  }
+  .search_Bar{
+    position: static;
+    display: flex;
+    width: auto;
+    flex: 1;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+[data-site-unique-id='JOSEPHTOYOTA']{
+  .icon{
+    background: #eb0a1e;
+    width: 6rem;
+  }
+}

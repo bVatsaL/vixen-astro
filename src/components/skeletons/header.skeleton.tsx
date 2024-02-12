@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { SearchBarSkeleton } from '@components/search-bar/skeleton';
-import header from './header.skeleton.scss';
+import header from './header.skeleton.module.scss';
 
 export const HeaderSkeleton = () => (
   <div className={header.header_Skeleton_Contain}>

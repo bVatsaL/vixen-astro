@@ -1,6 +1,6 @@
-import { Vehicle } from '@typedefs/vehicle';
+import { type Vehicle } from '@typedefs/vehicle';
 import { selector, selectorFamily } from 'recoil-ssr';
-import { pick } from 'lodash';
+import { pick } from 'lodash-es';
 import { cachedFetch } from './cache.atom';
 import { vehicleTitleFormatAtom, vehicleDescriptionFormatAtom } from './settings.atom';
 

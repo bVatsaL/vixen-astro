@@ -1,0 +1,6 @@
+{
+  "name": "vixen-cache",
+  "private": true,
+  "browser": "browser-cache.ts",
+  "main": "server-cache.ts"
+}

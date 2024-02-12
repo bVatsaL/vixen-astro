@@ -1,6 +1,6 @@
 import { selector } from 'recoil-ssr';
-import { pick } from 'lodash';
-import { MenuItem } from '@typedefs/menu';
+import { pick } from 'lodash-es';
+import { type MenuItem } from '@typedefs/menu';
 import { cachedFetch } from './cache.atom';
 import { siteIdAtom, siteUniqueIdAtom } from './site.atom';
 import { inventoryCountAtom } from './search.atom';

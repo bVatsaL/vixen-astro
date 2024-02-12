@@ -1,0 +1,27 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.inventory_Card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(10px);
+}
+
+.card_Img{
+  width: 100%;
+  aspect-ratio: calc(256 / 120);
+}
+
+.card_Title{
+  height: 1.5rem;
+  width: 80%;
+}
+
+.card_Text{
+  width: 90%;
+}
+
+.card_Price{
+  width: 50%;
+}

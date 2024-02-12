@@ -1,10 +1,19 @@
 ---
 import Header from '@components/header';
+// import LazyHudsonHeader from '@components/header/header.tsx'
+// import { ErrorBoundary } from 'react-error-boundary';
+import { HeaderSkeleton } from '@components/skeletons/header.skeleton';
+// import { Suspense } from 'react';
+
+
+// import { ErrorFallback } from '@components/error-fallback';
+// import HudsonHeader from '@components/header/header.tsx';
+
 
 interface Props {
-	title: string;
-  siteName: string;
-  siteUrl: string;
+	title?: string;
+  siteName?: string;
+  siteUrl?: string;
   headerBg: string;
 }
 
@@ -41,8 +50,13 @@ const { title, siteName, siteUrl, headerBg } = Astro.props;
     />
 		<title>{title}</title>
 	</head>
-	<body>
-    <Header />
-		<slot />
-	</body>
+  <body>
+  <!-- <ErrorBoundary FallbackComponent={ErrorFallback}> -->
+    <!-- <Suspense fallback={<HeaderSkeleton />}> -->
+    <!-- <HeaderSkeleton /> -->
+        <Header />
+    <!-- </Suspense> -->
+  <!-- </ErrorBoundary> -->
+  <slot />
+</body>
 </html>

@@ -1,0 +1,1088 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.navbar {
+  position: relative;
+  * {
+    user-select: none;
+  }
+  ul {
+    @include list-unstyled;
+  }
+  @include MQ(1024px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    overflow: hidden;
+    &.active {
+      display: block;
+    }
+  }
+  .special_Nav_Category.special_Nav_Category {
+    background-color: #d52b2b;
+    border-radius: 0;
+  }
+}
+
+.nav_List {
+  display: flex;
+  align-items: baseline;
+  @include MQ(1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $primary;
+    // &.nav_List {
+    //   padding: rem(5px);
+    // }
+    .nav_Link {
+      background: $primary;
+    }
+  }
+}
+
+[data-site='mladynissan'],
+[data-site='mlady'] {
+  .nav_List > li > .nav_Link > span {
+    font-size: 0.96rem;
+  }
+}
+
+.has_InnerSubmenu,
+.has_SubMenu {
+  position: relative;
+}
+
+.nav_List_Item {
+  @include MQ(1024px) {
+    width: 100%;
+    &.active {
+      .sub_Menu {
+        display: block;
+      }
+    }
+  }
+}
+
+[data-theme='canadacadillac'] {
+  .nav_List {
+    align-items: stretch;
+    > li > .nav_Link {
+      display: flex;
+      height: 100%;
+    }
+  }
+  .nav_List_Item {
+    &:last-child,
+    &:nth-last-child(2),
+    &:nth-last-child(3) {
+      .sub_Menu {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+.has_SubMenu {
+  &:last-child,
+  &:nth-last-child(2),
+  &:nth-last-child(3) {
+    .sub_Menu {
+      left: auto;
+      right: 0;
+    }
+    .inner_Sub_Menu {
+      left: auto;
+      right: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.sub_Menu {
+  width: 100%;
+  min-width: rem(220px);
+  background: $white;
+  z-index: 1;
+  display: none;
+  @include MQ_min(1025px) {
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    display: none;
+  }
+  &.sub_Menu {
+    padding: rem(5px);
+  }
+  .nav_Link {
+    color: $black;
+    display: flex;
+    white-space: initial;
+    @include hover {
+      background: $grey-lighter;
+    }
+  }
+  @include MQ(1024px) {
+    .nav_Link {
+      background: #fff;
+    }
+  }
+}
+.has_Submenu {
+  position: relative;
+}
+.inner_Sub_Menu.inner_Sub_Menu {
+  padding: 0.5rem;
+  &:empty {
+    display: none;
+  }
+  @include MQ(1024px) {
+    .nav_List_Item {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+.has_SubMenu {
+  @include MQ_min(1025px) {
+    &.hover {
+      > .nav_Link {
+        background: $grey-dark;
+      }
+      .sub_Menu {
+        display: block;
+      }
+      .two_Column_Sub_Menu {
+        display: flex;
+        > .nav_List_Item {
+          &:nth-child(2) {
+            border-left: 1px solid $black;
+          }
+        }
+      }
+    }
+  }
+}
+.subMenuItem_bg_Hover_White {
+  @include MQ_min(1025px) {
+    &.hover {
+      > .nav_Link {
+        background: $white;
+        color: var(--secondaryNavbarBg);
+      }
+    }
+  }
+  .sub_Menu {
+    .nav_Link {
+      font-size: 0.9rem;
+      text-transform: capitalize;
+      font-weight: $weight-normal;
+      &:hover {
+        background-color: var(--secondaryNavbarBg);
+        color: $white;
+      }
+    }
+  }
+}
+.nav_Link {
+  color: $white;
+  font-size: rem(15px);
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: em(5px) em(10px);
+  transition: none;
+  transition-property: background, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  white-space: nowrap;
+  display: block;
+  @include hover {
+    background: $grey-dark;
+  }
+
+  @include MQ(1024px) {
+    padding: em(15px);
+    font-size: rem(18px);
+    background: $primary;
+    white-space: normal;
+  }
+
+  @include MQ(1024px) {
+    padding: em(15px);
+    font-size: rem(18px);
+  }
+  &.hide_in_Mobile {
+    @include MQ(1024px) {
+      display: none;
+    }
+  }
+}
+
+.mobile_SubMenu_Toggle {
+  display: none;
+  @include MQ(1024px) {
+    display: flex;
+  }
+}
+
+.toggle_Operator {
+  display: none;
+  @include MQ(1024px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    &:checked {
+      ~ .sub_Menu {
+        display: block;
+      }
+    }
+  }
+}
+
+.mobile_Nav_Icon {
+  all: unset;
+  $s: 3px;
+  display: none;
+  @include MQ(1024px) {
+    display: flex;
+    align-items: center;
+    width: $s * 10;
+    height: $s * 10;
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    span {
+      background: $white;
+      width: $s * 10;
+      height: $s;
+      transition: background 10ms 300ms ease;
+      position: relative;
+      border-radius: 1px;
+      &:before,
+      &:after {
+        transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+        position: absolute;
+        background: $white;
+        width: $s * 10;
+        height: $s;
+        border-radius: 1px;
+        content: '';
+      }
+      &:before {
+        top: $s * -3;
+      }
+
+      &:after {
+        top: $s * 3;
+      }
+    }
+  }
+  &.open.open {
+    span {
+      background: transparent;
+      &:after,
+      &:before {
+        transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+        top: 0;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+[data-site='gauthiercadillac'] {
+  .mobile_Nav_Icon {
+    @include MQ(1024px) {
+      span {
+        background: $black;
+        &:before,
+        &:after {
+          background: $black;
+        }
+      }
+    }
+  }
+}
+.car_Mega_Menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% - 1px);
+  width: 55vw;
+  background-color: #fff;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  padding: 0.575rem 0.575rem;
+  list-style: none;
+  z-index: 99999;
+  display: none;
+  &.level_1 {
+    left: 3rem;
+    right: 3rem;
+    top: calc(100% - 1px);
+    width: auto;
+  }
+  &.level_1_no_margin {
+    left: 0;
+    right: 0;
+  }
+  &.level_1_no_padding {
+    padding: 0;
+  }
+  .sub_Menu & {
+    left: calc(100% - #{rem(6px)});
+    top: 0;
+  }
+}
+.wolfe_Megamenu.wolfe_Megamenu {
+  padding: 0;
+  a[href] {
+    &:hover {
+      background-color: transparent;
+      color: $black;
+    }
+  }
+  p {
+    &:first-of-type {
+      font-size: rem(12.5px);
+      line-height: rem(14px);
+      text-transform: uppercase;
+    }
+    font-size: rem(11px);
+    line-height: rem(14px);
+  }
+  li {
+    &:not(:first-child) {
+      display: flex;
+      margin-top: 0;
+      div {
+        color: #333;
+        flex: 0 0 230px;
+        // display: block;
+        background-color: #333;
+      }
+      ul {
+        border-bottom: rem(2px) solid $black;
+        margin: 0 0.7rem;
+        width: 100%;
+        justify-content: flex-start;
+        a {
+          padding: 0.625rem 0.3rem;
+        }
+        li {
+          flex: 0 1 11.2%;
+          width: 11.2%;
+          min-width: 7.125rem;
+          img {
+            margin-bottom: 0;
+            max-width: 85%;
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      div {
+        img {
+          width: 11rem;
+        }
+      }
+    }
+    &:nth-child(3) {
+      div {
+        img {
+          width: 7rem;
+        }
+      }
+    }
+    &:nth-child(4) {
+      div {
+        img {
+          width: 7rem;
+        }
+      }
+    }
+    &:nth-child(5) {
+      div {
+        img {
+          width: 6.5rem;
+        }
+      }
+    }
+  }
+}
+.mega_Menu {
+  @media only screen and (min-width: 1025px) {
+    &.hover {
+      .car_Mega_Menu {
+        display: block;
+      }
+    }
+  }
+}
+
+.mobile_Link.mobile_Link {
+  display: none;
+  @include MQ(1024px) {
+    display: block;
+  }
+}
+
+.nav_List_Right {
+  justify-content: flex-end;
+}
+
+.navbar {
+  .menu_Search {
+    display: flex;
+    background-color: $primary;
+    * {
+      border-radius: 0;
+    }
+    @include MQ_min(1024px) {
+      display: none;
+    }
+  }
+}
+.hide_In_Mobile,
+.visible_Only_Desktop {
+  display: none;
+}
+@include MQ_min(1024px) {
+  .hide_In_Mobile {
+    display: block;
+    margin-top: rem(10px);
+  }
+  .visible_Only_Desktop {
+    display: block;
+  }
+  .explore_Menu_List,
+  .has_Mega_Menu_List {
+    position: static;
+    &.hover {
+      .explore_Menu,
+      .mega_Menu_Col {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .explore_Menu,
+  .mega_Menu_Col {
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .mega_Menu_Col {
+    .custom_Timelist {
+      h3 {
+        margin-top: 0;
+      }
+      ul li {
+        margin-bottom: rem(5px);
+      }
+    }
+    &.mega_Menu_Col2 {
+      .mega_Menu_Col_Item {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: rem(32px);
+      }
+    }
+    .mega_Menu_Col_Item {
+      border-right: 1px solid $grey-lighter;
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      padding-inline: rem(10px);
+      ul {
+        @include list-unstyled;
+      }
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+  .explore_Menu {
+    .explore_Menu_Item {
+      flex: 1 1 rem(200px);
+      padding: rem(10px);
+      .nav_Link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+          background-color: transparent;
+          color: $black;
+        }
+      }
+    }
+  }
+  .outline_Btn {
+    border: 1px solid $primary;
+    color: $primary;
+    padding: rem(6px) rem(12px);
+    display: block;
+    text-align: center;
+    transition: 0.2s ease all;
+    font-size: rem(13px);
+    line-height: rem(18px);
+    margin-top: rem(16px);
+    text-transform: uppercase;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+
+.mega_Menu_Form {
+  label,
+  select,
+  input,
+  textarea {
+    font-size: 0.9rem;
+  }
+  input {
+    @include placeholder {
+      font-size: 0.8rem;
+    }
+  }
+}
+[data-site='tubmanchev'] {
+  .link_Hover_Bg_None {
+    @include MQ_min(1025px) {
+      &.hover {
+        > .nav_Link {
+          background: none;
+        }
+      }
+    }
+  }
+  .mega_Menu_Col_Item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .mega_Menu_Col {
+    width: 45vw;
+  }
+}
+
+[data-theme='jaguar'] {
+  .has_SubMenu {
+    &:last-child,
+    &:nth-last-child(2),
+    &:nth-last-child(3) {
+      .sub_Menu {
+        left: 0;
+        right: auto;
+      }
+    }
+    &.hover {
+      .car_Mega_Menu {
+        display: block;
+      }
+    }
+    ul li a span {
+      font-weight: 400;
+    }
+  }
+  @include MQ_min(1025px) {
+    .has_SubMenu {
+      > .nav_Link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding-left: 0.8em;
+        &:after {
+          content: '';
+          mask: url('@resources/svg-icons/down-arrow.svg') no-repeat center;
+          width: rem(9px);
+          height: rem(9px);
+          mask-size: contain;
+          background-color: $white;
+        }
+      }
+      .sub_Menu {
+        box-shadow: rgb(254, 254, 254) 0 3px 7px -1px;
+      }
+      .sub_Menu:has(.mega_Menu) {
+        height: 60vh;
+        .car_Mega_Menu {
+          height: 60vh;
+          box-shadow: none;
+          left: 100%;
+        }
+        .nav_List_Item a:not(.car_Mega_Menu ul li a) {
+          font-weight: 400;
+          padding: 0.4rem 0.7rem;
+          &:hover {
+            background-color: #4f4f4e;
+            color: $white;
+          }
+        }
+        .car_Mega_Menu {
+          background: rgba(254, 254, 254, 0.97);
+          max-width: 40rem;
+          overflow-y: auto;
+          ul li a {
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      > ul li a:not(.sub_Menu .car_Mega_Menu ul li a) {
+        font-weight: 400;
+        padding: 0.4rem 0.7rem;
+        &:hover {
+          background-color: #4f4f4e;
+          color: $white;
+        }
+      }
+    }
+  }
+  @include MQ(1024px) {
+    .nav_List_Item a {
+      &:hover {
+        background-color: #4f4f4e;
+        color: $white;
+      }
+    }
+    .vehicle_Modal {
+      li a {
+        text-decoration: none;
+      }
+      li a p {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: rem(13px);
+        line-height: rem(15px);
+        span {
+          display: block;
+          font-weight: 500;
+          font-size: rem(11px);
+          line-height: rem(12px);
+        }
+      }
+    }
+  }
+}
+[data-theme='landrover'] {
+  .has_SubMenu {
+    &[data-label='New'],
+    &[data-label='NEW VEHICLES'] {
+      &.hover {
+        .sub_Menu {
+          &.hover {
+            .car_Mega_Menu {
+              display: block;
+              left: 0;
+              top: 80%;
+              width: 100vw;
+              max-height: 70vh;
+              overflow: scroll;
+            }
+          }
+        }
+      }
+    }
+  }
+  .car_Mega_Menu {
+    &.level_1 {
+      left: 0;
+      width: auto;
+    }
+  }
+}
+[data-theme='landrover'] {
+  .has_SubMenu {
+    &:last-child,
+    &:nth-last-child(2),
+    &:nth-last-child(3) {
+      .sub_Menu {
+        left: 0;
+        right: auto;
+      }
+    }
+    &.hover {
+      .car_Mega_Menu {
+        display: block;
+      }
+    }
+  }
+  @include MQ_min(1025px) {
+    .has_SubMenu {
+      > .nav_Link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0.3rem 0.45rem;
+        &:after {
+          content: '';
+          mask: url('@resources/svg-icons/down-arrow.svg') no-repeat center;
+          width: rem(8px);
+          height: rem(8px);
+          mask-size: contain;
+          background-color: black;
+        }
+      }
+      .sub_Menu {
+        box-shadow: 0 3px 7px -1px;
+      }
+    }
+  }
+  .car_Mega_Menu {
+    width: 40rem;
+    height: 32vw;
+    // box-shadow: 0 3px 7px -1px;
+  }
+}
+[data-theme='landrover'] {
+  @include MQ_min(1025px) {
+    [data-label='New'],
+    [data-label='NEW VEHICLES'] {
+      &.has_SubMenu:hover {
+        .sub_Menu {
+          left: 0;
+          right: auto;
+          display: flex;
+          width: calc(100vw - 9rem);
+          flex-wrap: wrap;
+        }
+        .car_Mega_Menu {
+          display: block;
+          left: 0;
+          top: 80%;
+          width: 380px;
+          max-height: 70vh;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}
+//Translate button
+.btn_Container {
+  background-color: $white;
+  padding: 0.5rem 0.9375em;
+}
+.btn_translate.btn_translate {
+  background-color: $primary;
+  border-radius: 0;
+  padding: rem(10px);
+}
+.translate_btn.translate_btn {
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  font-weight: $weight-bold;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  color: #2d2d2d;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    background-color: #1a1a1a;
+    border-color: #141414;
+    color: $white;
+  }
+}
+@include MQ_min(1025px) {
+  .hide_In_Desktop.hide_In_Desktop {
+    display: none;
+  }
+}
+
+[data-theme='claremonttoyota'],
+[data-site='tubmanchev'] {
+  .has_SubMenu {
+    &.hover {
+      .car_Mega_Menu {
+        display: block;
+      }
+    }
+  }
+}
+[data-site='gauthiercadillac'] {
+  .car_Mega_Menu {
+    padding: 3.575rem 6.575rem;
+  }
+}
+.has_SubMenu.on_Hover_Megamenu_Block {
+  &.hover {
+    .car_Mega_Menu {
+      display: block;
+    }
+  }
+}
+[data-theme='mercedesbenz'] {
+  .has_SubMenu {
+    @include MQ_min(1025px) {
+      &.hover {
+        > .nav_Link {
+          background: $white;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+[data-theme='mercedesbenz']:not([data-site='mbofedh']) {
+  .has_SubMenu {
+    @include MQ_min(1025px) {
+      &.specials.hover {
+        > .nav_Link {
+          background: #fbff3d;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+[data-site-unique-id='TOYOTASB'] {
+  .has_SubMenu {
+    &:last-child,
+    &:nth-last-child(2),
+    &:nth-last-child(3) {
+      .sub_Menu {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}
+.sub_Mega_Menu {
+  padding: 1rem 1.5rem;
+}
+[data-site-unique-id='CLAREMONTTOYOTA'],
+[data-site-unique-id='JOHNSONCITYTOYOTA'] {
+  .navbar .nav_List {
+    padding: 0 4.2em 0 0;
+  }
+}
+
+[data-site-unique-id='TOYOTAWESTCOVINA'] {
+  .car_Mega_Menu {
+    width: 40vw;
+  }
+}
+
+[data-site-unique-id="TOYOTAOFMILPITAS"] {
+  .car_Mega_Menu {
+    width: 37vw;
+  }
+  .header_Smartpath_Icon {
+    @include MQ(1024px) {
+      flex-basis: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      width: 100%;
+      margin-top: 84px;
+      padding-inline: 0.5rem;
+    }
+  }
+}
+
+[data-site='hudsonauto'] {
+  .mobile_Nav_Icon {
+    &.open.open {
+      span {
+        background: transparent;
+      }
+    }
+  }
+}
+[data-theme='toyotacanadatheme1'] {
+  .car_Mega_Menu {
+    width: 44vw;
+  }
+  @include MQ_min(1480px) {
+    .car_Mega_Menu {
+      width: 36vw;
+    }
+  }
+}
+
+.translate_Btn_Top_Mobile {
+  margin-left: auto;
+}
+
+.btn_Translate_Mobile {
+  padding: 0.222rem;
+  font-size: 0.722rem;
+  min-width: unset;
+  width: auto;
+  display: none;
+  @include MQ(767px) {
+    display: inline-block;
+  }
+  @include MQ(384px) {
+    padding: 0.111rem;
+    font-size: 0.556rem;
+  }
+}
+
+[data-site-unique-id='JOSEPHTOYOTA'] {
+  .header_Smartpath_Icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    @include MQ(1024px) {
+      background-color: #333333;
+      position: initial;
+      padding-inline: 0.5rem;
+    }
+  }
+}
+
+[data-theme='jaguar'] {
+  @include MQ_min(1024px) {
+    .has_SubMenu {
+      &:first-child {
+        &.hover {
+          .sub_Menu {
+            left: 0;
+            right: 0;
+            display: flex;
+            height: auto;
+            width: 100vw;
+            background-color: $contactNavbarBg;
+            &:after {
+              content: '';
+              background: $contactNavbarBg;
+              position: absolute;
+              left: 0;
+              right: 0;
+              width: 100vw;
+              height: 2.39rem;
+              margin-left: -14.13rem;
+              top: 0;
+              z-index: -1;
+            }
+          }
+        }
+      }
+      &.hover {
+        .car_Mega_Menu {
+          left: 0 !important;
+          top: 100%;
+          right: auto;
+          max-width: 100vw !important;
+          height: unset;
+        }
+      }
+    }
+    .car_Mega_Menu {
+      width: 17vw;
+      max-height: calc(100vh - 204px);
+      height: auto !important;
+      background-color: $headerBg !important;
+      padding: 0;
+      &.level_1 {
+        left: 0;
+      }
+    }
+  }
+
+  @include MQ(1440px) {
+    .has_SubMenu {
+      &:first-child {
+        &.hover {
+          .sub_Menu {
+            &:after {
+              margin-left: -12.1875rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+[data-theme='GMCtheme1'] {
+  .car_Mega_Menu {
+    padding-right: 6.8em;
+    left: calc(100% - #{rem(24px)});
+  }
+  .sub_Menu {
+    left: calc(100% - #{rem(175px)});
+  }
+}
+[data-site-unique-id='CLAREMONTTOYOTA'],
+[data-site-unique-id='JOHNSONCITYTOYOTA'],
+[data-site-unique-id='SPARTANBURGTOYOTA'] {
+  .navbar {
+    display: flex;
+    align-items: center;
+    @include MQ(1024px) {
+      display: none;
+    }
+    &.active {
+      @include MQ(1024px) {
+        display: block;
+      }
+    }
+  }
+  .header_Smartpath_Icon {
+    display: flex;
+    align-items: center;
+    @include MQ(1024px) {
+      display: none;
+    }
+  }
+}
+
+[data-theme='canadacadillac'] {
+  .sub_Menu {
+    width: fit-content;
+  }
+}
+
+[data-site-unique-id="BEAMANTOYOTA"] {
+  .btn_Translate_Mobile {
+    @include MQ(384px) {
+      padding: 0.222rem;
+      font-size: 0.722rem;
+    }
+  }
+}
+
+[data-site='jaguarcerritos'] {
+  @include MQ_min(1025px) {
+    .has_SubMenu {
+      .sub_Menu:has(.mega_Menu) {
+        .car_Mega_Menu {
+          box-shadow: rgb(254, 254, 254) 0 3px 7px -1px;
+          overflow-y: auto;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          width: 16rem;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

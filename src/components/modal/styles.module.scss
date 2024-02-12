@@ -1,0 +1,539 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+@include keyframes(movedown) {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
+}
+@include keyframes(moveup) {
+  0% {
+    translate: 0 10px;
+    opacity: 0;
+  }
+  100% {
+    translate: none;
+    opacity: 1;
+  }
+}
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $black;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all ease-out;
+  z-index: 999;
+  &.open {
+    opacity: 0.6;
+    visibility: visible;
+  }
+  &.dark_Overlay {
+    [data-site='jaguarcerritos'] & {
+      z-index: 999999999;
+    }
+    &.open {
+      opacity: 0.75;
+    }
+  }
+  [data-theme='landrover'] & {
+    background: #000;
+    &.open {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.75);
+      visibility: visible;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+  // @include scrollbars(0, 0, 0, $white, $white, $white);
+  &.open {
+    display: block;
+    .modal-dialog {
+      animation: moveup 0.3s forwards ease-out;
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+  @include MQ(768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &.open {
+      display: flex;
+    }
+  }
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  padding: 0 rem(10px);
+  pointer-events: none;
+  max-width: rem(700px);
+  margin: 3rem auto;
+  transition: transform 0.5s ease-out;
+  animation: movedown 0.3s forwards cubic-bezier(0.39, 0.575, 0.565, 1);
+  min-height: calc(100% - 3.5rem);
+  height: calc(100% - 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include MQ(768px) {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    height: calc(100% - 100px);
+    min-height: calc(100% - 100px);
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(16px) rem(60px) rem(16px) rem(20px);
+  border-radius: $border-radius $border-radius 0 0;
+  background: $primary-light;
+  margin-bottom: rem(-20px);
+  @include MQ(768px) {
+    margin-bottom: 0;
+  }
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: $white;
+  background-clip: padding-box;
+  border-radius: $border-radius;
+  outline: 0;
+  max-height: 100%;
+  isolation: isolate;
+  @include MQ(768px) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-top: 40px;
+  }
+  .close_Btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem(50px);
+    height: rem(35px);
+    padding: 0;
+    border: none;
+    min-width: initial;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      display: none;
+    }
+    img {
+      width: 75%;
+      pointer-events: none;
+      scale: 0.9;
+      transition: scale 0.3s ease-out;
+    }
+    @include hover {
+      img {
+        scale: 1;
+      }
+    }
+  }
+}
+
+.modal-title {
+  margin-bottom: 0;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: rem(24px);
+}
+.modal-body {
+  padding: rem(40px) rem(20px) rem(20px);
+  overflow-y: auto;
+  // @include scrollbars(5px, 0, 4px, $white, $grey-light, $grey);
+  @include MQ(768px) {
+    padding: rem(20px);
+  }
+}
+
+.modal-440 {
+  .modal-dialog {
+    max-width: rem(440px);
+  }
+}
+.modal-620 {
+  .modal-dialog {
+    max-width: rem(620px);
+  }
+}
+.modal-580 {
+  .modal-dialog {
+    max-width: rem(580px);
+  }
+}
+.modal-500 {
+  .modal-dialog {
+    max-width: 31.5rem;
+  }
+}
+.delete_My_Info_Modal.delete_My_Info_Modal {
+  .modal-dialog {
+    max-width: 530px;
+  }
+  .modal-content {
+    border-radius: 8px;
+  }
+  .modal-body {
+    padding: 4.5rem 1rem 1.25rem;
+  }
+  // .modal-body::-webkit-scrollbar{
+  //   display: none;
+  // }
+}
+.modal-590 {
+  .modal-dialog {
+    max-width: rem(590px);
+  }
+}
+.modal-720 {
+  .modal-dialog {
+    max-width: rem(720px);
+  }
+}
+.modal-730 {
+  .modal-dialog {
+    max-width: 40rem;
+    @include MQ(768px) {
+      max-width: 100%;
+    }
+  }
+}
+.modal-897 {
+  z-index: 999;
+  .modal-dialog {
+    max-width: 51rem;
+    @include MQ(768px) {
+      max-width: 100%;
+    }
+  }
+  .modal-body {
+    padding: 0;
+  }
+}
+.modal-1030 {
+  z-index: 999;
+  .modal-dialog {
+    max-width: 57rem;
+    @include MQ(768px) {
+      max-width: 100%;
+    }
+  }
+}
+.wolfe_staffInfo_Modal {
+  @include MQ(768px) {
+    justify-content: center;
+  }
+  .modal-content {
+    border-radius: 0.5rem;
+  }
+  .modal-dialog {
+    @include MQ(768px) {
+      margin: 0 auto;
+      width: 90%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}
+.staffinfo_modal_Overlay {
+  &.open {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+.modal_90 {
+  .modal-dialog {
+    max-width: 90%;
+    @include MQ(768px) {
+      max-width: 100%;
+    }
+  }
+  .modal-body {
+    padding: rem(10px);
+  }
+}
+.modal_60 {
+  .modal-dialog {
+    max-width: 60rem;
+    @include MQ(768px) {
+      max-width: 100%;
+    }
+  }
+}
+.preapproval_Modal {
+  .modal-dialog {
+    max-width: 42rem;
+    @include MQ(768px) {
+      max-width: 100%;
+    }
+    .modal-content {
+      border-radius: 20px;
+      padding: 0;
+      @include MQ(768px) {
+        border-radius: 0;
+      }
+    }
+  }
+  .modal-body {
+    padding: 0;
+  }
+}
+
+.modal_Scroll {
+  .modal-dialog {
+    height: auto;
+    min-height: auto;
+    margin: 4rem auto 0;
+  }
+  .modal-body {
+    overflow: visible;
+  }
+  @include MQ(768px) {
+    justify-content: flex-start;
+    .modal-content {
+      border-radius: 4px;
+    }
+  }
+}
+
+[data-theme] {
+  .modal-dialog {
+    margin: 3rem auto;
+  }
+  .close_Btn {
+    right: 0.5rem;
+    top: rem(-40px);
+    color: #fefefe;
+    width: rem(32px);
+    height: rem(32px);
+    border-radius: rem(40px);
+    border: 3px solid #fefefe;
+    font-size: 1em;
+    i {
+      display: block;
+    }
+    img {
+      display: none;
+    }
+  }
+  .modal-content {
+    border-radius: 0;
+    @include MQ(768px) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding-top: 0.5em;
+      margin: 0 auto;
+      width: 95%;
+    }
+  }
+}
+
+.modal_Close_Btn_Outside {
+  .close_Btn {
+    right: 0.5rem;
+    top: rem(-40px);
+    color: #fefefe;
+    width: rem(32px);
+    height: rem(32px);
+    border-radius: rem(40px);
+    border: 3px solid #fefefe;
+    font-size: 1em;
+    i {
+      display: block;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+
+[data-theme='canadacadillac'] {
+  .modal-content {
+    border-radius: 0;
+    @include MQ(768px) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding-top: 0.5em;
+      margin: 0 auto;
+      width: 95%;
+    }
+  }
+}
+
+.compare_Modal {
+  .modal-dialog {
+    max-width: 90%;
+    // height: auto;
+    height: calc(100% - 6rem);
+    min-height: calc(100% - 6rem);
+    @include MQ(768px) {
+      max-width: 100%;
+    }
+  }
+  .modal-body {
+    padding: rem(10px);
+    overflow: hidden;
+  }
+}
+[data-site='righttoyota'] {
+  .modal-content {
+    border-radius: rem(10px);
+    @include MQ(768px) {
+      padding-top: 0;
+    }
+  }
+}
+@include MQ(768px) {
+  .center_Modal {
+    .modal-dialog {
+      justify-content: center;
+    }
+  }
+}
+[data-theme='jaguar'] {
+  .rounded_Modal {
+    .modal-content {
+      border-radius: rem(10px);
+      @include MQ(768px) {
+        padding-top: 0;
+      }
+    }
+  }
+  @include MQ(768px) {
+    .modal-dialog {
+      justify-content: center;
+    }
+  }
+}
+
+.rounded_Modal {
+  .modal-content {
+    border-radius: rem(10px);
+  }
+}
+
+.srp_filter_Card_Modal {
+  [data-site='jaguarcerritos'] & {
+    z-index: 9999999999;
+  }
+  [data-theme='mercedesbenz'] & {
+    z-index: 9999999999;
+  }
+  .modal-dialog {
+    max-width: 27.778rem;
+    height: auto;
+    width: 100%;
+  }
+  .modal-content {
+    border-radius: 0.444rem;
+    box-shadow: 0 0 10px #000;
+  }
+  .modal-body {
+    padding: 0.833rem 1.667rem;
+  }
+}
+
+.watch_Video_toyota {
+  .modal-body {
+    padding-top: 0;
+  }
+  @include MQ(768px) {
+    .modal-content {
+      padding-top: 0;
+    }
+  }
+}
+.modal_Style_2.modal_Style_2 {
+  .modal-dialog {
+    margin: 0 auto;
+    padding-block: 3rem;
+  }
+  @include MQ(768px) {
+    justify-content: center;
+  }
+}
+
+.fullwidth_iframe_modal {
+  .modal-dialog {
+    max-width: 90%;
+    // height: auto;
+    height: calc(100% - 6rem);
+    min-height: calc(100% - 6rem);
+    @include MQ(768px) {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+}
+[data-theme="toyotatheme1"], [data-theme="nissantheme1"], [data-theme="mercedesbenz"], [data-theme="strathmoremotors"], [data-theme="GMCtheme1"] {
+  .modal-897{
+    @include MQ(768px){
+      &.open {
+        display: block;
+      }
+    }
+    .modal-dialog{
+      max-width: 60rem;
+    }
+  }
+}
+.full_Img_Modal {
+  .modal-dialog {
+    margin-block: 0;
+    height: 100svh;
+    padding-block: 3rem;
+  }
+  .modal-body {
+    padding: 0;
+    overflow-y: hidden;
+  }
+  .modal-content {
+    background-color: transparent;
+    text-align: center;
+    height: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.listing_Items {
+  text-align: center;
+  background-color: $grey-lighter;
+  padding: rem(8px);
+  font-size: 1rem;
+
+  cursor: pointer;
+  margin-bottom: 0;
+
+  &.active, &:hover {
+    background-color: $cyan;
+    color: $white;
+  }
+  &.active::after {
+    content: '-';
+  }
+}
+
+.listing_Items::after {
+  content: '+';
+  padding-left: rem(8px);
+  font-size: rem(20px);
+}
+
+

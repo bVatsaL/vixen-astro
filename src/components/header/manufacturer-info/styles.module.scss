@@ -1,0 +1,44 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.manufacturer_Info_Wrap{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.manufacturer_Info_Title{
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  max-width: 130px;
+}
+
+.manufacturer_Info_Url{
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.5rem;
+  max-width: 275px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.manufacturer_Info_Title{
+  margin: 0;
+  color: $white;
+  display: block;
+}
+
+.manufacturer_Info_Img{
+  // max-width: 180px;
+  max-height: 40px;
+  max-width: initial;
+  // flex: 1;
+}
+
+.chev_Logo{
+  .manufacturer_Info_Img{
+    max-height: 20px;
+  }
+}

@@ -1,0 +1,562 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.mega_Menu {
+  padding: 0;
+  margin: 0;
+  .nav_Category {
+    display: block;
+    flex: 1 0 0;
+    padding: 0;
+    & + .nav_Category {
+      margin-top: rem(18px);
+    }
+  }
+
+  .d_None.d_None {
+    display: none;
+    @include MQ(1024px) {
+      display: block;
+      margin-bottom: rem(50px);
+    }
+  }
+  .d_None_Desktop.d_None_Desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include MQ(1024px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+  &.theme_Infinity {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.nav_Category_Title {
+  display: block;
+  font-size: rem(55.2px);
+  text-align: center;
+  text-transform: uppercase;
+  padding: rem(9.384px);
+  font-weight: 800;
+  line-height: rem(55.2px);
+  white-space: normal;
+  font-style: italic;
+  color: $black;
+  @media (max-width: $dn-xl-device) {
+    font-size: rem(32px);
+    line-height: rem(32px);
+    padding: rem(8px);
+  }
+  @media (max-width: 1024px) {
+    font-size: rem(20px);
+    text-align: center;
+    background: $primary-dark;
+    color: $grey-lightest;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: capitalize;
+    padding: 0;
+    line-height: 1.5;
+  }
+}
+
+.category_Items {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: rem(16px);
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+  }
+  .category_Item_Info {
+    margin-top: rem(6px);
+    text-align: center;
+    @media (max-width: 1024px) {
+      margin-top: rem(4px);
+    }
+  }
+  .category_Item {
+    flex: 0 1 12.5%;
+    display: inline-block;
+    width: 12.5%;
+    -webkit-box-flex: 0;
+    min-width: rem(130px);
+    position: relative;
+    padding: 0;
+    @media (max-width: 1024px) {
+      flex: 0 0 calc(33.33% - 1rem);
+      width: auto;
+      max-width: rem(250px);
+      min-width: auto;
+    }
+    @media (max-width: $dn-xs-device) {
+      flex: 0 0 calc(48% - 1rem);
+    }
+  }
+  .category_Item_Info {
+    .category_Item_Name {
+      font-size: rem(20.24px);
+      white-space: normal;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: rem(22.26px);
+      @media (max-width: $dn-xl-device) {
+        font-size: rem(13.6px);
+        word-break: break-all;
+        line-height: rem(14.96px);
+      }
+    }
+    .category_Item_Meta {
+      opacity: 0.8;
+      font-size: rem(16.192px);
+      padding-left: rem(3px);
+      line-height: rem(17.811px);
+      font-weight: 400;
+      @media (max-width: $dn-xl-device) {
+        font-size: rem(10.88px);
+        line-height: rem(11.96px);
+      }
+      &::before {
+        content: '(';
+      }
+      &::after {
+        content: ')';
+      }
+    }
+  }
+}
+[data-site='toyotacanadademo'] {
+  .category_Items {
+    justify-content: start;
+  }
+}
+.Cat_Image_None.Cat_Image_None {
+  display: block;
+  width: auto;
+  flex-basis: content;
+  a[href] {
+    img {
+      max-width: rem(218px);
+      width: rem(218px);
+    }
+    &:hover {
+      img {
+        transform: none;
+      }
+    }
+  }
+  @include MQ(1024px) {
+    display: none;
+  }
+}
+[data-site='wolfecalgary'] {
+  .Cat_Image_None.Cat_Image_None {
+    a[href] {
+      img {
+        max-width: 13.625rem;
+        width: 13.625rem;
+      }
+    }
+  }
+}
+
+.main_Mobile_Title {
+  display: none;
+  margin-bottom: 1rem;
+  @media (max-width: 1024px) {
+    display: block;
+  }
+  .link {
+    color: $meganenu-nav-title;
+    font-weight: 600;
+    font-size: rem(24px);
+    text-transform: capitalize;
+    text-align: center;
+    padding-top: 0;
+    display: block;
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+
+.text_White {
+  color: $white;
+  display: block;
+  text-align: center;
+  font-style: italic;
+  font-size: rem(20px);
+}
+
+.theme_Infinity {
+  display: block;
+  background: $white-bis;
+  .nav_Category_Title,
+  &.nav_Category_Title {
+    font-size: rem(22px);
+    text-align: left;
+    font-style: normal;
+    font-family: 'CadillacGothicWide', 'Cadillac_Sans', 'Helvetica Neue', sans-serif;
+    border-bottom: 1px solid #000;
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+    padding: 0.5em 0;
+  }
+  &.title_Bg_Transparent {
+    background-color: transparent;
+  }
+  .category_Items {
+    justify-content: flex-start;
+  }
+  .category_Item {
+    width: calc(25% - 0.75rem);
+    flex: 0 calc(25% - 0.75rem);
+  }
+  &.theme_Nissan {
+    .category_Item {
+      width: 15%;
+      flex: 0 15%;
+    }
+    .nav_Category_Title {
+      font-family: var(--font-family);
+    }
+  }
+}
+
+.theme_CanadaCadillac {
+  display: block;
+  background: $white-bis;
+  &.theme_CanadaCadillac {
+    padding: 1rem;
+  }
+  .nav_Category_Title {
+    font-size: rem(22px);
+    text-align: left;
+    font-style: normal;
+    font-family: 'CadillacGothicWide', 'Cadillac_Sans', 'Helvetica Neue', sans-serif;
+    border-bottom: 1px solid #000;
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+    padding: 0.5em 0;
+  }
+  .category_Items {
+    justify-content: flex-start;
+  }
+  .category_Item {
+    width: calc(20% - 0.8rem);
+    flex: 0 calc(20% - 0.8rem);
+  }
+}
+
+.theme_Murray_Cadillac.theme_Murray_Cadillac {
+  max-width: 1200px;
+  margin: auto;
+  width: 80%;
+  min-width: 660px;
+  letter-spacing: 0.154rem;
+  .nav_Category_Title {
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+  .category_Items {
+    justify-content: flex-start;
+  }
+  .category_Item {
+    width: calc(20% - 0.8rem);
+    flex: 0 calc(20% - 0.8rem);
+  }
+}
+
+// [data-theme="canadacadillac"]{
+
+// }
+.view_Vehicles_Inventory {
+  .category_Items {
+    justify-content: flex-start;
+  }
+  .main_Mobile_Title {
+    display: block;
+    margin-bottom: 0.5rem;
+    .link {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #02142d;
+      font-weight: $weight-bold;
+      line-height: 1.5;
+    }
+  }
+
+  .nav_Category_Title {
+    font-size: 1rem;
+    text-align: center;
+    background: #02142d;
+    color: $grey-lightest;
+    font-weight: $weight-semibold;
+    font-style: normal;
+    text-transform: capitalize;
+    padding: 0;
+    line-height: 1.5;
+    @media (max-width: $dn-xl-device) {
+      font-size: rem(20px);
+      line-height: 1.5;
+      padding: 0;
+    }
+  }
+}
+[data-theme='jaguar'] {
+  .main_Mobile_Title {
+    margin-bottom: rem(8px);
+    .link {
+      font-family: 'Proxima Nova';
+      text-decoration: none;
+    }
+  }
+  .nav_Category_Title,
+  .main_Mobile_Title .link {
+    font-size: rem(14px);
+    line-height: rem(21px);
+  }
+  @include MQ_min(1025px) {
+    .nav_Category_Title {
+      font-size: 1.8rem;
+      font-style: normal;
+      color: $primary;
+      line-height: 1;
+      margin-bottom: 0;
+      font-family: 'Proxima Nova';
+      font-weight: 800;
+    }
+    .category_Items {
+      text-transform: uppercase;
+    }
+  }
+  @include MQ(1024px) {
+    .category_Items {
+      justify-content: flex-start;
+    }
+  }
+}
+[data-site='tubmanchev'] {
+  .nav_Category_Title {
+    line-height: 1;
+    padding: 4px 0;
+    font-size: 1rem;
+  }
+  .category_Items {
+    justify-content: initial;
+  }
+}
+
+.theme_LandRover {
+  display: flow-root;
+  .nav_Category {
+    float: left;
+    width: 50%;
+    margin: 0;
+    margin-top: 0 !important;
+  }
+  .nav_Category_Title {
+    font-style: normal;
+    text-align: left;
+    padding: 0.51rem;
+    line-height: 1;
+    margin: 0;
+    @include MQ_min(87em) {
+      font-size: 3rem;
+    }
+    @include MQ_min(55em) {
+      font-size: 1em;
+      justify-content: left;
+      font-weight: 200;
+    }
+  }
+  .category_Items {
+    flex-direction: column;
+  }
+  .category_Item {
+    width: auto;
+    flex: auto;
+    display: block;
+  }
+}
+[data-site-unique-id='HONDASIERRA'] {
+  .theme_Infinity {
+    font-family: 'Open Sans';
+    .nav_Category_Title {
+      font-family: 'Open Sans';
+    }
+  }
+}
+[data-theme='toyotatheme2'] {
+  .nav_Category_Title {
+    font-family: $family-primary;
+  }
+}
+[data-theme='mercedesbenz'] {
+  .main_Mobile_Title {
+    margin-bottom: rem(8px);
+    .link {
+      font-size: 1rem;
+    }
+  }
+  .nav_Category_Title {
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+      span {
+        display: inline-block;
+        line-height: 16px;
+        &:before,
+        &:after {
+          content: '|';
+        }
+        &:before {
+          padding-right: 5px;
+        }
+        &:after {
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+[data-site-unique-id='HONDASIERRA'] {
+  .category_Items {
+    gap: 0.5rem 1rem;
+  }
+  .mega_Menu {
+    .nav_Category {
+      & + .nav_Category {
+        margin-top: 0;
+      }
+    }
+    &.theme_Infinity {
+      padding: 0 1.5rem;
+    }
+  }
+}
+[data-site='mygastonianissan'] {
+  .mega_Menu {
+    display: block;
+    background: $white;
+    .nav_Category_Title {
+      font-size: rem(22px);
+      text-align: left;
+      font-style: normal;
+      border-bottom: 1px solid #000;
+      padding: 0;
+      margin: 0;
+      background-color: $white;
+      line-height: 1.2;
+      padding: 0.5em 0;
+    }
+    .category_Items {
+      justify-content: flex-start;
+    }
+    .category_Item {
+      width: calc(25% - 0.75rem);
+      flex: 0 calc(25% - 0.75rem);
+      p {
+        &:first-of-type {
+          font-size: 0.95rem;
+        }
+      }
+    }
+    .category_Item {
+      width: 15%;
+      flex: 0 15%;
+    }
+  }
+}
+[data-theme='landrover'] {
+  .nav_Category_Title {
+    background-color: #f0f0f0;
+  }
+}
+[data-theme='GMCtheme1'] {
+  .category_Items {
+    .category_Item {
+      width: 10%;
+      flex: 0 1 10%;
+      @include MQ(778px) {
+        flex: 0 1 20%;
+      }
+      @include MQ(425px) {
+        flex: 0 1 25%;
+      }
+    }
+  }
+}
+[data-theme='jaguar'] {
+  @include MQ_min(1024px) {
+    .nav_Category_Title {
+      background-color: #707070;
+      text-align: left;
+      color: $white;
+      font-size: 13.8px;
+    }
+    .category_Items {
+      flex-direction: column;
+    }
+    .mega_Menu {
+      .nav_Category {
+        margin-top: 0 !important;
+        .category_Items {
+          gap: 0;
+          .category_Item {
+            width: 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+[data-site-unique-id='TOYOTAOFLASVEGAS']{
+  @include MQ(1024px) {
+    .used_Jellybeans.used_Jellybeans {
+      .main_Mobile_Title {
+        display: none;
+      }
+      .nav_Category_Title.nav_Category_Title {
+        background: transparent;
+        color: $black;
+        border: none;
+      }
+      .category_Items {
+        justify-content: center;
+        align-items: center;
+        .category_Item {
+          width: 50%;
+          flex: 0 50%;
+        }
+      }
+    }
+  }
+  .theme_Infinity {
+    .nav_Category_Title,
+      &.nav_Category_Title {
+        font-family: inherit;
+      }
+  }
+}
+
+[data-site='jaguarcerritos'] {
+  .category_Items {
+    padding: 0.22rem 0;
+  }
+}

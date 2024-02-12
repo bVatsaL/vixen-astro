@@ -1,0 +1,304 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.contact_time_sidebar {
+  padding: $size-normal;
+  background: $primary;
+  color: $white;
+  border-radius: $border-radius;
+
+  a {
+    // text-decoration: underline;
+    -webkit-text-decoration-color: rgba($white, 0.4);
+    text-decoration-color: rgba($white, 0.4);
+  }
+
+  > .title {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  [data-theme='canadacadillac'] & {
+    border-radius: 0;
+  }
+}
+
+.title {
+  // font-size: $size-medium;
+  border-bottom: 1px solid $white;
+  margin: 0.5em 0;
+  text-transform: capitalize;
+
+  [data-theme='canadacadillac'] & {
+    font-size: 1.4em;
+  }
+}
+
+.address {
+  font-style: normal;
+  margin-block: 0.5em;
+
+  a {
+    color: inherit;
+    display: block;
+  }
+
+  span {
+    display: block;
+  }
+
+  [data-theme='canadacadillac'] & {
+    font-size: 0.8rem;
+  }
+}
+
+.contact_number.contact_number {
+  margin-bottom: 0;
+
+  a {
+    color: inherit;
+    display: flex;
+  }
+
+  strong {
+    // min-width: rem(75px);
+    padding-right: rem(5px);
+  }
+
+  [data-theme='canadacadillac'] & {
+    font-size: 0.8rem;
+  }
+}
+
+.day_time_list {
+  margin: 0;
+  padding: rem(8px) 0 0 0;
+  list-style: none;
+}
+
+.single_day_time {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  flex-wrap: wrap;
+
+  strong {
+    font-weight: bold;
+  }
+
+  [data-theme='canadacadillac'] &,
+  [data-site-unique-id='CLAREMONTTOYOTA'] & {
+    font-size: 0.8rem;
+  }
+}
+
+.title_Resize {
+  border-radius: 0;
+
+  h3 {
+    font-size: rem(16px);
+    font-weight: $weight-extrabold;
+  }
+
+  ul li {
+    font-size: rem(14px);
+  }
+}
+
+.textdecoration_None a {
+  width: rem(130px);
+  font-size: rem(13px);
+  text-decoration: none;
+  margin-bottom: -0.5em;
+}
+
+.contact_TextDecoration_None a {
+  font-size: rem(13px);
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.font_Weight_Normal {
+  strong {
+    min-width: initial;
+    font-weight: normal;
+    margin-right: 5px;
+  }
+}
+
+.sidebar_Title_Resize {
+  font-weight: $weight-extrabold;
+  border-radius: 0;
+
+  h3 {
+    font-size: rem(16px);
+    font-weight: $weight-extrabold;
+    line-height: rem(26.87px);
+
+    @include MQ(1392px) {
+      font-size: rem(17.92px);
+    }
+  }
+
+  li {
+    font-size: 0.7rem;
+    line-height: rem(18px);
+  }
+
+  .sidebar_Address_Width {
+    a {
+      width: rem(145px);
+      line-height: rem(18px);
+      font-weight: 400;
+    }
+  }
+
+  .sidebar_Link_Fontsize,
+  .sidebar_Address_Width {
+    a {
+      font-size: rem(12.8px);
+    }
+
+    strong {
+      font-weight: 400;
+    }
+  }
+}
+
+[data-site='tubmanchev'] {
+  .contact_time_sidebar {
+    color: #212529;
+    border-radius: 0;
+  }
+
+  .title {
+    border-bottom: 1px solid #212529;
+  }
+}
+
+[data-site-unique-id='CLAREMONTTOYOTA'],
+[data-site-unique-id='JOHNSONCITYTOYOTA'] {
+  .contact_time_sidebar {
+    border-radius: 0;
+  }
+
+  .textdecoration_None a {
+    width: 9.125rem;
+  }
+
+  .font_Weight_Normal {
+    strong {
+      font-weight: $weight-bold;
+    }
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .contact_number {
+    margin-bottom: 0;
+
+    strong {
+      font-weight: $weight-normal;
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.Contact_Email_Group {
+  color: #212529;
+  font-size: 0.8rem;
+  margin: 1rem 0;
+}
+
+.Contact_Email_Item {
+  margin-bottom: 0.5rem;
+}
+
+.Contact_Email_Link {
+  color: inherit;
+}
+
+.font_sm {
+  font-size: 0.8rem;
+
+  li,
+  a,
+  p,
+  span {
+    font-size: inherit;
+  }
+
+  .title {
+    font-size: 1.4em;
+  }
+}
+
+.capital_String {
+  text-transform: uppercase;
+}
+
+[data-site='sierrahondaofmonrovia'] {
+  .contact_time_sidebar {
+    .title {
+      font-size: rem(20px);
+      line-height: 1.4;
+      margin-bottom: rem(14px);
+    }
+  }
+}
+
+[data-site='hilltopnissan'] {
+  .day_time_list.day_time_list {
+    padding-left: 0;
+  }
+}
+
+[data-site='mbescondido'],[data-site='mbofedh'] {
+  .title {
+    font-size: rem(18px);
+  }
+  .address span,
+  .contact_number,
+  .single_day_time {
+    font-size: rem(13px);
+  }
+  .day_time_list.day_time_list {
+    padding-left: 0;
+  }
+}
+
+[data-theme='Hondatheme1'] {
+  .contact_time_sidebar {
+    a {
+      color: $white;
+      display: block;
+      &:hover{
+        color: $white;
+      }
+    }
+  }
+}
+[data-theme='toyotatheme3']{
+  .title {
+    font-size: rem(17.92px);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .single_day_time{
+    font-size: rem(13px);
+  }
+} 
+[data-theme='cdjrtheme1']{
+  .title {
+    font-size: rem(17.92px);
+    font-weight: 800;
+    text-transform: capitalize;
+  }
+  .single_day_time{
+    font-size: rem(13px);
+  }
+} 

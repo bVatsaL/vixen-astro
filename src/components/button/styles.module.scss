@@ -1,0 +1,754 @@
+@import '@resources/css/scss/variable.module.scss';
+@import '@resources/css/scss/mixins.module.scss';
+
+.btn {
+  font-size: $size-normal;
+  line-height: 1;
+  border-radius: $radius;
+  font-weight: $weight-normal;
+  border: 1px solid $primary;
+  background-color: $primary;
+  padding: calc(15px / 16px) * 1em calc(20px / 16px) * 1em;
+  color: $white;
+  transition: 0.3s all ease-in-out;
+  margin: 0;
+  position: relative;
+  justify-content: center;
+  min-width: 8em;
+  text-align: center;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $primary-darker;
+    outline: 0;
+  }
+  &:disabled,
+  &.btn-disabled {
+    background-color: $grey-light;
+    border-color: $grey-light;
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
+      background-color: $grey-light;
+    }
+  }
+  [data-theme='landrover'] & {
+    padding: calc(10px / 16px) * 1em;
+    border-radius: 0;
+  }
+  [data-theme='nissantheme1'] & {
+    padding: calc(10px / 16px) * 1em calc(12px / 16px) * 1em;
+    border-radius: 0;
+  }
+  [data-site='rockhillnissan'] &.btn_QuickView {
+    background: $rockhillNissanBlack;
+    color: $rockhillNissanYellow;
+    box-shadow: none;
+    border-color: $rockhillNissanBlack;
+  }
+}
+
+.btn-lg {
+  font-size: $size-medium;
+}
+
+.btn-sm {
+  font-size: $size-small;
+}
+
+.btn-primary-invert {
+  border: 1px solid $white;
+  background-color: $white;
+  color: $primary;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.btn-outline {
+  background: none;
+  color: $primary;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $primary-darker;
+    color: $white;
+  }
+  &:disabled,
+  &.btn-disabled {
+    background: none;
+    border-color: $grey-light;
+    color: $grey-light;
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
+      background-color: $grey-light;
+    }
+  }
+}
+
+.btn-secondary {
+  border: 1px solid $secondary;
+  background-color: $secondary;
+  color: $white;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $secondary-light;
+  }
+  &:disabled,
+  &.btn-disabled {
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $grey-light;
+    }
+  }
+}
+
+.btn-secondary-invert {
+  border: 1px solid $white;
+  background-color: $white;
+  color: $secondary;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $secondary;
+    color: $white;
+  }
+}
+
+.btn-secondary-outline {
+  background: none;
+  color: $white;
+  border-color: $white;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $secondary-light;
+  }
+  &:disabled,
+  &.btn-disabled {
+    background: none;
+    border-color: $grey-light;
+    color: $grey-light;
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
+      background-color: $grey-light;
+    }
+  }
+}
+
+.btn-danger {
+  border: 1px solid $danger;
+  background-color: $danger;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: darken($danger, 5%);
+  }
+}
+
+.btn-link {
+  background-color: transparent;
+  border: none;
+  color: $primary;
+  padding: rem(10px) 0;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: transparent;
+    color: $primary-darker;
+  }
+  &:disabled,
+  &.btn-disabled {
+    background-color: transparent;
+    color: $grey-light;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+.btn-link-gray {
+  color: $grey;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: darken($grey, 5%);
+  }
+}
+
+.btn-link-underline {
+  font-size: rem(20px);
+  line-height: rem(20px);
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-position: from-font;
+  text-decoration-thickness: from-font;
+  color: $primary;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $grey-dark;
+  }
+}
+
+.btn-icon-only {
+  padding: 0.25em;
+  min-width: calc(40px / 16px) * 1em;
+  min-height: calc(40px / 16px) * 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: calc(12px / 16px) * 1em;
+  img,
+  svg {
+    width: calc(18px / 16px) * 1em;
+    height: calc(18px / 16px) * 1em;
+    vertical-align: middle;
+  }
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  img,
+  svg {
+    width: calc(18px / 16px) * 1em;
+    height: calc(18px / 16px) * 1em;
+    vertical-align: middle;
+    margin-left: 0;
+    margin-right: calc(10px / 16px) * 1em;
+  }
+}
+.btn-icon-right {
+  img,
+  svg {
+    margin-right: 0;
+    margin-left: calc(10px / 16px) * 1em;
+  }
+}
+
+.btn-icon-top {
+  flex-direction: column;
+  align-items: center;
+  img,
+  svg {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: calc(10px / 16px) * 1em;
+  }
+}
+
+.btn-icon-bottom {
+  flex-direction: column;
+  align-items: center;
+  img,
+  svg {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: calc(10px / 16px) * 1em;
+  }
+}
+
+.loading {
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+  &:after {
+    content: ' ';
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: url('./images/loader.svg') no-repeat transparent center;
+    overflow: hidden;
+    transition: 0.2s all linear;
+    background-size: 80% 80%;
+    z-index: 3;
+    background-color: $primary;
+  }
+}
+
+.btn-secondary-loader {
+  &:after {
+    background-image: none;
+    background-color: $white;
+    -webkit-mask: url('./images/loader.svg') no-repeat center;
+    mask: url('./images/loader.svg') no-repeat center;
+    mask-size: 80% 80%;
+  }
+  &:before {
+    content: ' ';
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    transition: 0.2s all linear;
+    z-index: 3;
+    background-color: $secondary;
+  }
+}
+
+//delivery address button
+.btn-link-with-icon {
+  display: inline-flex;
+  color: $white;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: rem(4px);
+  }
+  span {
+    line-height: rem(20px);
+  }
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $white;
+  }
+  &.icon-18 {
+    img {
+      width: rem(18px);
+      height: rem(18px);
+      margin-right: rem(8px);
+    }
+  }
+}
+
+.btn-link-with-icon-primary {
+  @extend .btn-link-with-icon;
+  color: $primary;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $primary-darker;
+  }
+}
+
+.btn-link-white {
+  color: $white;
+  line-height: rem(20px);
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $white;
+  }
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.btn-link-14 {
+  font-size: rem(14px);
+  line-height: rem(16px);
+  color: $grey-dark;
+}
+
+.btn-left-icon {
+  img {
+    width: rem(20px);
+    margin-right: rem(13px);
+  }
+}
+
+.btn-left-icon-flex {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: rem(8px);
+  }
+}
+
+.btn-left-sm-icon {
+  img {
+    width: rem(12px);
+    margin-right: 0;
+  }
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.btn-outline-gray {
+  background-color: transparent;
+  border-color: $grey-lightest;
+  color: $black;
+  font-weight: 400;
+  .svg-icon {
+    color: $primary;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+    border-color: $primary;
+    border-width: 1px;
+  }
+  &:disabled,
+  &.btn-disabled {
+    background-color: $grey-lightest;
+    border-color: $grey-light;
+    border-radius: rem(12px);
+    .svg-icon {
+      color: $white;
+    }
+  }
+  &.active {
+    background-color: $primary;
+    color: $white;
+    font-weight: 600;
+    .svg-icon {
+      color: $white;
+    }
+  }
+}
+.btn-outline-primary {
+  border-color: $primary;
+  color: $primary;
+}
+.minus-disable {
+  .svg-icon {
+    color: $grey-light !important;
+  }
+}
+
+.both-disable {
+  &:disabled,
+  &.btn-disabled {
+    background-color: $grey-lighter;
+    border-color: $grey-lighter;
+  }
+}
+
+.btn-link-icon {
+  padding: rem(2px);
+  img {
+    width: rem(11px);
+  }
+}
+
+.btn-link-lg-icon {
+  img {
+    width: rem(18px);
+    vertical-align: middle;
+  }
+}
+
+.btn-link-secondary {
+  color: $secondary;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $secondary-light;
+  }
+}
+
+.btn-link-gray {
+  color: $grey;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $primary;
+  }
+}
+
+.btn-light-primary {
+  background-color: $primary-darker;
+  color: $primary;
+  border-color: $primary-darker;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $primary-darker;
+  }
+}
+
+.btn-inverse {
+  background-color: $white;
+  color: $primary;
+  border-color: $white;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $white;
+    color: $primary;
+    border-color: $white;
+  }
+}
+
+.btn-rounded {
+  border-radius: 10em;
+}
+
+//UX updates(June 2022)
+.min-w-236 {
+  min-width: rem(236px);
+}
+
+.btn-padding {
+  padding: rem(8px);
+}
+.btn-padding_6 {
+  padding: rem(6px);
+}
+
+// custom dropdown button scss
+
+.btn-right-icon {
+  img,
+  svg {
+    position: absolute;
+    right: 0;
+    margin: auto rem(14px) auto rem(8px);
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.dropdown-btn {
+  position: relative;
+  width: 100%;
+  background-color: $white;
+  color: $text-strong;
+  border: rem(1px) solid $black;
+  border-radius: $radius;
+  &:hover,
+  &:focus {
+    background-color: $white;
+  }
+}
+
+.btnBlockMobile {
+  @media screen and (max-width: $md-device) {
+    width: 100%;
+  }
+}
+
+.btn-hover-img {
+  img {
+    transition: transform 0.3s ease-in;
+  }
+  @include hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.btn-learnMore {
+  padding: 0.6rem;
+  border: rem(2px) solid #6391ef;
+  font-size: rem(13px);
+  line-height: rem(22px);
+  border-radius: rem(16px);
+  width: 100%;
+  color: $white;
+  font-weight: $weight-medium;
+  &:hover,
+  &:focus {
+    background-color: #6391ef;
+  }
+}
+.btn-uppercase {
+  text-transform: uppercase;
+}
+
+.send_to_Phone_btn {
+  padding: 0.5em 0;
+  align-items: center;
+  border: 0;
+  gap: 1em;
+  span {
+    background: green;
+    color: $white;
+    padding: 0.5em;
+  }
+  img {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0;
+    object-fit: contain;
+    object-position: center;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background: none;
+    span {
+      background: darkgreen;
+    }
+  }
+}
+
+.btn_Radius_Zero {
+  border-radius: 0 !important;
+}
+
+.btn_InlineBlock {
+  display: inline-block;
+}
+
+.btn_InlineFlex {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn_QuickView {
+  min-width: 110px;
+  font-size: 100%;
+  padding: 0.5em;
+  white-space: nowrap;
+}
+
+.btn_No_Wrap {
+  white-space: nowrap;
+}
+
+.btn_No_Style,
+.btn_Reset {
+  padding: 0;
+  margin: 0;
+  min-width: initial;
+  background: transparent;
+  color: $primary;
+  border-radius: 0;
+  border: 0;
+  transition: none;
+  &:focus,
+  &:hover {
+    background: transparent;
+    color: $primary;
+    border-radius: 0;
+    border: 0;
+  }
+}
+
+.btn_Bold {
+  font-weight: bold;
+}
+
+.btn_Black {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  @include hover {
+    background: transparent;
+    color: #000;
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    color: #000;
+    @include hover {
+      background: #000;
+      color: #fff;
+    }
+  }
+  &.btn_Bold {
+    border-width: 2px;
+  }
+  &.btn-sm {
+    padding: 0.75em 2em;
+  }
+}
+
+.btn_Dark {
+  background: $grey-dark;
+  color: #fff;
+  border-color: $grey-dark;
+  @include hover {
+    background: $grey;
+    border-color: $grey;
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    color: $grey-dark;
+    @include hover {
+      background: $grey-dark;
+      color: #fff;
+    }
+  }
+  &.btn_Bold {
+    border-width: 2px;
+  }
+  &.btn-sm {
+    padding: 0.75em 2em;
+  }
+}
+
+.btn_Hover_White {
+  @include hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+}
+.btn_White {
+  background: $white;
+  color: $black;
+  border-color: $white;
+  @include hover {
+    background: transparent;
+    color: $white;
+  }
+  &_Hover_Fill {
+    @include hover {
+      background: $black;
+      color: $white;
+    }
+  }
+}

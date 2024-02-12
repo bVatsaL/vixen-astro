@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState } from 'react';
+import { type ReactElement, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from '@reactpwa/core';
 import cn from 'classnames';
 
@@ -7,20 +7,20 @@ import { SearchBar } from '@components/search-bar';
 import { Link } from '@components/link';
 import { withLang } from '@utils/language.util';
 import { Img } from '@components/img';
-import { MenuItem } from '@typedefs/menu';
-import { Vehicle } from '@typedefs/vehicle';
+import { type MenuItem } from '@typedefs/menu';
+import { type Vehicle } from '@typedefs/vehicle';
 import { useRecoilValue } from 'recoil-ssr';
 import { showCompareandFavAtom } from '@atoms/global-settings.atom';
 import CompareVehicles from '@components/compare-vehicles';
 import { SearchOnHoverIcon } from '@components/search_on_hover_icon';
 import { HeaderMenu } from '../menu';
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 import { ManufacturerInfo } from '../manufacturer-info';
 import { Button } from '@components/button';
 import { ToggleSwitch } from '@components/toggle-button';
 import { ContactHoursTab } from '@components/contact-hours-tab';
 import useOnClickOutside from '@hooks/useOnclickOutside';
-import { CouponItem } from '@typedefs/coupon';
+import { type CouponItem } from '@typedefs/coupon';
 import { isValidVin } from '@components/compare-vehicles';
 
 interface IHeader {
