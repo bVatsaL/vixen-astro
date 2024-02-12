@@ -1,4 +1,4 @@
-import { activeModalsAtom, registeredModalsAtom } from '@atoms/modal.atom';
+import { activeModalsAtom, registeredModalsAtom } from 'src/stores/modal.atom';
 import { resumeBodyScroll, stopBodyScroll } from '@utils/modal.util';
 import { cloneElement, type FC, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';

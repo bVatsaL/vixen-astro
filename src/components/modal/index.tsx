@@ -7,9 +7,9 @@ import { Button } from '@components/button';
 // Images
 import Close from '@resources/svg-icons/close.svg';
 import { useRecoilValue } from 'recoil-ssr';
-import { activeModalsAtom } from '@atoms/modal.atom';
+import { activeModalsAtom } from 'src/stores/modal.atom';
 import { useModals } from '@hooks/useModal';
-import { lightBoxAtom } from '@atoms/lightbox.atom';
+import { lightBoxAtom } from 'src/stores/lightbox.atom';
 import style from './styles.module.scss';
 import { trackAscEvent } from '@utils/analytics.util';
 

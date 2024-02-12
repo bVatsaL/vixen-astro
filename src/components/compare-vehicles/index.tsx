@@ -1,7 +1,7 @@
 import { Button } from '@components/button';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil-ssr';
-import { favoriteVehiclesAtom, selectVehcileAtom } from '@atoms/search.atom';
+import { favoriteVehiclesAtom, selectVehcileAtom } from 'src/stores/search.atom';
 import { Link } from '@components/link';
 import { type SearchResultItem } from '@typedefs/search';
 import { useLocation } from 'react-router-dom';

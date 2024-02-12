@@ -4,7 +4,7 @@ import { Img } from '@components/img';
 import { Link } from '@components/link';
 // import { Button } from '@components/button';
 import styles from './styles.module.scss';
-import { siteNameAtom } from '@atoms/site.atom';
+import { siteNameAtom } from 'src/stores/site.atom';
 import { useRecoilValue } from 'recoil-ssr';
 
 interface ISingleColoumVehicleDetailsInventoryCard {

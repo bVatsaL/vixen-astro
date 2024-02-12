@@ -1,4 +1,4 @@
-import { type TimeData } from '@atoms/settings.atom';
+import { type TimeData } from 'src/stores/settings.atom';
 import { getExtraClasses } from '@utils/common.util';
 import styles from './styles.module.scss';
 import { Accordion } from '@components/accordion';

@@ -1,9 +1,9 @@
 import Phoneicon from '@resources/svg-icons/phone.svg';
 import Locationicon from '@resources/svg-icons/location.svg';
 import { useRecoilValue } from 'recoil-ssr';
-import { addressAtom, googleAddressUrlAtom, primaryPhoneAtom, secondaryPhoneAtom } from '@atoms/location.atom';
+import { addressAtom, googleAddressUrlAtom, primaryPhoneAtom, secondaryPhoneAtom } from 'src/stores/location.atom';
 import { useCallRail } from '@hooks/useCallRail';
-import { phonePrimaryTitleAtom, secondaryPrimaryTitleAtom } from '@atoms/global-settings.atom';
+import { phonePrimaryTitleAtom, secondaryPrimaryTitleAtom } from 'src/stores/global-settings.atom';
 import styles from './styles.scss';
 
 export const HeaderContactDetails: React.FC<any> = () => {

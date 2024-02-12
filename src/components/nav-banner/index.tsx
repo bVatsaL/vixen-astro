@@ -5,8 +5,8 @@ import {
   navBannerBgColorAtom,
   navBannerFontColorAtom,
   navBannerTextAtom,
-} from '@atoms/settings.atom';
-import { siteNameAtom } from '@atoms/site.atom';
+} from 'src/stores/settings.atom';
+import { siteNameAtom } from 'src/stores/site.atom';
 import { Img } from '@components/img';
 import { Link } from '@components/link';
 import cn from 'classnames';

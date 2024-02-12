@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import cn from 'classnames';
 import { useRecoilValue } from 'recoil-ssr';
-import { explorevehcilesDataAtom } from '@atoms/global-settings.atom';
+import { explorevehcilesDataAtom } from 'src/stores/global-settings.atom';
 import TabContent from './tab-content';
 import TabNavItem from './tab-nav-item';
 import { ExploreAllVehicleSliderTabs } from './exploreVehiclesTab';

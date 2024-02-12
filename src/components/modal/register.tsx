@@ -1,4 +1,4 @@
-import { registeredModalsAtom } from '@atoms/modal.atom';
+import { registeredModalsAtom } from 'src/stores/modal.atom';
 import { type FC, memo, type ReactElement, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil-ssr';
 

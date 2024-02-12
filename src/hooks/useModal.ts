@@ -1,4 +1,4 @@
-import { activeModalsAtom, registeredModalsAtom } from '@atoms/modal.atom';
+import { activeModalsAtom, registeredModalsAtom } from 'src/stores/modal.atom';
 import { trackAscEvent } from '@utils/analytics.util';
 import { useRecoilState, useRecoilValue } from 'recoil-ssr';
 

@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { isValidVin } from '@components/compare-vehicles';
 import { Img } from '@components/img';
 import { useRecoilValue } from 'recoil-ssr';
-import { favoriteVehiclesAtom } from '@atoms/search.atom';
+import { favoriteVehiclesAtom } from 'src/stores/search.atom';
 import { CompareVehiclesTableCard } from './compare_vehicle_table_card';
 import check from './images/check.svg';
 

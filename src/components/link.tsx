@@ -3,7 +3,7 @@ import { Link as ReactLink, useParams } from 'react-router-dom';
 import { type FC, useMemo } from 'react';
 import { withLang } from '@utils/language.util';
 import { useRecoilValue } from 'recoil-ssr';
-import { siteUrlsAtom } from '@atoms/site.atom';
+import { siteUrlsAtom } from 'src/stores/site.atom';
 
 
 

@@ -1,4 +1,4 @@
-import { expectedSiteOriginAtom } from '@atoms/site.atom';
+import { expectedSiteOriginAtom } from 'src/stores/site.atom';
 import { loadCallRailScripts } from '@utils/call-rail.util';
 import { useEffect } from 'react';
 import { useRecoilValue } from 'recoil-ssr';

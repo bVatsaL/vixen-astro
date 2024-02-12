@@ -14,7 +14,7 @@ import searchIcon from '@resources/svg-icons/search-ico-white.svg';
 import { delay, getExtraClasses } from '@utils/common.util';
 import { Button } from '@components/button';
 import { useRecoilValue } from 'recoil-ssr';
-import { addressAtom } from '@atoms/location.atom';
+import { addressAtom } from 'src/stores/location.atom';
 import { typeWord } from '@utils/text.util';
 import { serial } from '@utils/promise.util';
 import { Link } from '@components/link';
@@ -25,7 +25,7 @@ import { withLang } from '@utils/language.util';
 import { trackAscEvent, trackGetDirections, trackTypedSearch } from '@utils/analytics.util';
 import styles from './styles.module.scss';
 import { isValidVin } from '@components/compare-vehicles';
-import { searchRestrictByTypeAtom } from '@atoms/settings.atom';
+import { searchRestrictByTypeAtom } from 'src/stores/settings.atom';
 
 interface ISearchBar {
   className?: string;

@@ -9,7 +9,7 @@ import { getExtraClasses } from '@utils/common.util';
 import { SearchBar } from '@components/search-bar';
 import { withLang } from '@utils/language.util';
 import { useRecoilValue } from 'recoil-ssr';
-import { partsDataAtom, salesDataAtom, servicesDataAtom, smartPathActiveAtom } from '@atoms/settings.atom';
+import { partsDataAtom, salesDataAtom, servicesDataAtom, smartPathActiveAtom } from 'src/stores/settings.atom';
 // import { ContactTimeList } from '@components/contact-timing-sidebar/contact-timings';
 // import { Form1002ContactUsForm } from '@components/form-1002';
 import { MenuVehicle } from './vehicle';
@@ -26,8 +26,8 @@ import { trackAscEvent } from '@utils/analytics.util';
 import {
   showHeartIconInBlackAtom,
   showHearticonOnMenuLogoLeftAtom,
-} from '@atoms/show-heart-icon-on-menu-logo-left.atom';
-import { hideSearchBarMobileMenuAtom } from '@atoms/check-mercedesbenz.atom';
+} from 'src/stores/show-heart-icon-on-menu-logo-left.atom';
+import { hideSearchBarMobileMenuAtom } from 'src/stores/check-mercedesbenz.atom';
 interface IMenu {
   items?: MenuItem[];
   vehicles?: Vehicle[];

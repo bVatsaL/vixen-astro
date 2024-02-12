@@ -11,11 +11,11 @@ import {
   primaryPhoneAtom,
   secondaryPhoneAtom,
   tertiaryPhoneAtom,
-} from '@atoms/location.atom';
+} from 'src/stores/location.atom';
 import { useRecoilValue } from 'recoil-ssr';
 import { Link } from '@components/link';
 import { ContactTimeList } from '@components/contact-timing-sidebar/contact-timings';
-import { hoursTitlesAtom, partsDataAtom, salesDataAtom, servicesDataAtom } from '@atoms/settings.atom';
+import { hoursTitlesAtom, partsDataAtom, salesDataAtom, servicesDataAtom } from 'src/stores/settings.atom';
 import styles from './style.module.scss';
 
 interface IContactHourstab {

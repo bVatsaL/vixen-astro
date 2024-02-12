@@ -1,17 +1,10 @@
 ---
 import Header from '@components/header';
-// import LazyHudsonHeader from '@components/header/header.tsx'
-// import { ErrorBoundary } from 'react-error-boundary';
-import { HeaderSkeleton } from '@components/skeletons/header.skeleton';
 // import { Suspense } from 'react';
-
-
-// import { ErrorFallback } from '@components/error-fallback';
 // import HudsonHeader from '@components/header/header.tsx';
 
-
 interface Props {
-	title?: string;
+  title?: string;
   siteName?: string;
   siteUrl?: string;
   headerBg: string;
@@ -21,9 +14,9 @@ const { title, siteName, siteUrl, headerBg } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+<html lang='en'>
+  <head>
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge' />
     <meta name='application-name' content={siteName} />
     <meta property='og:site_name' content={siteName} />
     <meta name='generator' content='ReactPWA' />
@@ -41,22 +34,20 @@ const { title, siteName, siteUrl, headerBg } = Astro.props;
     <meta property='og:type' content='article' />
     <meta property='og:url' content={siteUrl} />
     <meta name='theme-color' content={headerBg} />
-    <meta name='google-site-verification' content='JsVnetQjvIaK0Ql1ZUWfh2GMkaNSqCMNiNC4kcrRPS8' />
+    <meta
+      name='google-site-verification'
+      content='JsVnetQjvIaK0Ql1ZUWfh2GMkaNSqCMNiNC4kcrRPS8'
+    />
     <link
       rel='icon'
       type='image/png'
       sizes='32x32'
       href='https://static.foxdealer.com/614/2020/08/cropped-White-1-e1598887399658-32x32.png'
     />
-		<title>{title}</title>
-	</head>
+    <title>{title}</title>
+  </head>
   <body>
-  <!-- <ErrorBoundary FallbackComponent={ErrorFallback}> -->
-    <!-- <Suspense fallback={<HeaderSkeleton />}> -->
-    <!-- <HeaderSkeleton /> -->
-        <Header />
-    <!-- </Suspense> -->
-  <!-- </ErrorBoundary> -->
-  <slot />
-</body>
+    <Header />
+    <slot />
+  </body>
 </html>

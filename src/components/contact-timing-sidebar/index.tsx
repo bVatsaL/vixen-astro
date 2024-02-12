@@ -1,4 +1,4 @@
-import { type TimeData } from '@atoms/settings.atom';
+import { type TimeData } from 'src/stores/settings.atom';
 import { useCallRail } from '@hooks/useCallRail';
 import { getExtraClasses } from '@utils/common.util';
 import cn from 'classnames';

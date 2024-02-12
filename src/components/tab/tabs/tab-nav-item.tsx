@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { type ReactElement } from 'react';
 import styles from './styles.module.scss';
 import { useRecoilValue } from 'recoil-ssr';
-import { siteConfigAtom } from '@atoms/site.atom';
+import { siteConfigAtom } from 'src/stores/site.atom';
 import { t3SendEvent } from '@utils/analytics.util';
 
 interface ITabprops {

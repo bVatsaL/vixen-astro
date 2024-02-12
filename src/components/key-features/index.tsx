@@ -4,7 +4,7 @@ import { Img } from '@components/img';
 import { Tooltip } from '@components/tool-tip';
 import styles from './styles.module.scss';
 import { useRecoilValue } from 'recoil-ssr';
-import { showFourKeyFeaturesAtom } from '@atoms/srp-filters.atom';
+import { showFourKeyFeaturesAtom } from 'src/stores/srp-filters.atom';
 
 export type PriorityOptions = {
   description?: string;

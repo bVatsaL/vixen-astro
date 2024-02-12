@@ -10,7 +10,7 @@ import { Img } from '@components/img';
 import { type MenuItem } from '@typedefs/menu';
 import { type Vehicle } from '@typedefs/vehicle';
 import { useRecoilValue } from 'recoil-ssr';
-import { showCompareandFavAtom } from '@atoms/global-settings.atom';
+import { showCompareandFavAtom } from 'src/stores/global-settings.atom';
 import CompareVehicles from '@components/compare-vehicles';
 import { SearchOnHoverIcon } from '@components/search_on_hover_icon';
 import { HeaderMenu } from '../menu';
