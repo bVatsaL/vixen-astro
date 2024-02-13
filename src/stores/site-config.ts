@@ -93,6 +93,10 @@ export const $siteUniqueId = computed(
   $siteConfig,
   (siteConfig) => siteConstants[siteConfig?.siteId ?? '']
 );
+export const $siteId = computed(
+  $siteConfig,
+  (siteConfig) => siteConfig?.siteId ?? '',
+);
 
 export const $searchDomainName = computed(
   $siteConfig,
@@ -107,3 +111,7 @@ export const $searchDomainName = computed(
 );
 
 export const $siteName = computed($siteConfig, siteConfig => siteConfig?.siteName ?? '');
+
+export const $expectedSiteOrigin = computed($siteConfig, siteConfig => siteConfig?.expectedSiteOrigin ?? '');
+
+export const $siteUrl = atom('http://hudsonauto.in:3000');

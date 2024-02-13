@@ -1,0 +1,82 @@
+---
+import cn from 'classnames';
+import HeaderSearchBarMegaMenu from '@components/header/search_bar-mega_menu/index.astro';
+import { $siteLogo, $srpAutotype } from 'src/stores/settings';
+import { $siteName } from 'src/stores/site-config';
+import { $headerMainNav } from 'src/stores/menus';
+import { $vehicles } from 'src/stores/vehicles';
+
+// import { googleAddressUrlAtom } from '@atoms/location.atom';
+import { $defaultCarModels, $preOwnedTotal } from 'src/stores/search';
+import { type Vehicle, type VehicleDetail } from '@typedefs/vehicle';
+// import HeaderCall from '@components/header/call-direction/call';
+// import HeaderDirections from '@components/header/call-direction/direction';
+import style from './styles.module.scss';
+import { fetchDefaultCarModels, fetchPreOwnedTotal } from '@services/search';
+import { fetchMenus } from '@services/menu';
+import { fetchVehicles } from '@services/vehicles';
+import { fetchSettings } from '@services/settings';
+// import NavBannerV1 from '@components/nav-banner';
+
+await fetchPreOwnedTotal();
+await fetchDefaultCarModels();
+await fetchMenus();
+await fetchVehicles();
+await fetchSettings();
+
+const siteLogo = $siteLogo.get();
+const siteName = $siteName.get();
+const preOwnedTotal = $preOwnedTotal.get();
+const mainNav = $headerMainNav.get();
+// const primaryPhone = useRecoilValue(primaryPhoneAtom);
+const primaryPhone = '843-302-8534';
+// const googleAddressUrl = useRecoilValue(googleAddressUrlAtom);
+const vehicles = $vehicles.get();
+const models = $defaultCarModels.get();
+const autoTypes = $srpAutotype.get();
+const vechiclesWithPriceLabel = vehicles.map((v: Vehicle) => ({
+  ...v,
+  details: v?.details?.map((i: VehicleDetail) => ({
+    ...i,
+    'inventory-url': i.inventory_count ? i?.['inventory-url'] : 'contact-us',
+    noStockLabel: 'Reserve Now!',
+  })),
+}));
+const mainNavWithPreOwnedTotal = mainNav.map((m: any) => ({
+  ...m,
+  ...(m.label === 'Pre-Owned Vehicles'
+    ? {
+        submenu: m?.submenu?.map((s: any) => ({
+          ...s,
+          label: s?.label?.replace(
+            'View All Pre-Owned Vehicles',
+            `View All ${preOwnedTotal ? preOwnedTotal : ''} Pre-Owned Vehicles`
+          ),
+        })),
+      }
+    : {}),
+}));
+
+---
+<>
+  <HeaderSearchBarMegaMenu
+    siteLogo={siteLogo}
+    className='hudson_Header'
+    siteName={siteName}
+    navigationMenu={mainNavWithPreOwnedTotal}
+    vehicles={vechiclesWithPriceLabel}
+    searchBarPlaceholders={models}
+    searchAutoType={autoTypes}
+    navListClassName='justify_Content_Between'
+    navLinkLevel1ClassName={cn(style.menu_Font_Size, style.mobile_Nav_Bg)}
+    submenuItemClassName='subMenuItem_bg_Hover_White'
+  />
+  {/* <div className={style.call_Direction_Contain}> */}
+  {/* <HeaderCall className={style.call_Btn} number={primaryPhone} /> */}
+  {
+    /* <HeaderDirections className={style.direction_Btn} url={googleAddressUrl} /> */
+  }
+  {/* </div> */}
+  {/* <NavBannerV1 /> */}
+</>
+---

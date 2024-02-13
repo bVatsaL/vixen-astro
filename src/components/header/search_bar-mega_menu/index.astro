@@ -1,0 +1,88 @@
+---
+import { type ReactElement } from 'react';
+import cn from 'classnames';
+
+import { getExtraClasses } from '@utils/common.util';
+import { Img } from '@components/img';
+import { type MenuItem } from '@typedefs/menu';
+import { type Vehicle } from '@typedefs/vehicle';
+import { $showCompareandFav } from 'src/stores/global';
+// import CompareVehicles from '@components/compare-vehicles';
+import { fetchGlobalData } from '@services/global'
+// import { HeaderMenu } from '../menu';
+import styles from './styles.module.scss';
+
+interface Props {
+  className?: string;
+  children?: ReactElement;
+  siteLogo?: string;
+  siteName?: string;
+  navigationMenu?: MenuItem[];
+  vehicles?: Vehicle[];
+  searchAutoType: string[];
+  searchBarPlaceholders?: { display_name: string; item: string }[]; 
+  navListClassName?: string;
+  navLinkLevel1ClassName?: string;
+  submenuItemClassName?: string;
+}
+
+await fetchGlobalData();
+
+const {
+  className,
+  children,
+  siteLogo,
+  siteName,
+  navigationMenu,
+  vehicles,
+  searchBarPlaceholders,
+  searchAutoType,
+  navListClassName,
+  submenuItemClassName,
+} = Astro.props;
+
+const extraClasses = getExtraClasses(styles, className);
+const navListClasses = getExtraClasses(styles, navListClassName);
+const submenuItemExtraClasses = getExtraClasses(styles, submenuItemClassName);
+const showSaveandCompare = $showCompareandFav.get();
+---
+
+<header class={cn(styles.site_Header, extraClasses)}>
+  {children}
+  <div class={styles.header_Content}>
+    <div class={cn(styles.header_Container, 'container container-fluid')}>
+      <!-- {
+        showSaveandCompare === 'true' && (
+          <div class={cn(styles.compare_Vehicle_Contain)}>
+            <CompareVehicles btnClassName={styles.compare_Btn} />
+          </div>
+        )
+      } -->
+      {
+        !!siteLogo && (
+          <div class={cn(styles.site_Logo)}>
+            <a href='/' class={styles.site_Logo_Link}>
+              <Img src={siteLogo ?? ''} alt={siteName ?? ''} maxWidth={1024} />
+            </a>
+          </div>
+        )
+      }
+      <div class={cn(styles.header_Menu_Contain)}>
+
+        THis is nested Headers
+        <!-- <HeaderMenu
+          navListClassName={navListClasses}
+          items={navigationMenu}
+          vehicles={vehicles}
+          btnClassName={cn(styles.header_Menu_Btn)}
+          searchBarPlaceholders={searchBarPlaceholders}
+          searchAutoType={searchAutoType}
+          mobileSearchClassName={cn(styles.mobile_Search)}
+          siteName={siteName}
+          submenuItemClassName={submenuItemExtraClasses}
+        /> -->
+      </div>
+    </div>
+  </div>
+</header>
+---

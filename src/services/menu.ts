@@ -1,7 +1,7 @@
 import type { MenuItem } from '@typedefs/menu';
 import { apiFetch } from './api-fetch';
 import lodashPick from 'lodash/pick';
-import { $menu } from '@atoms/menu';
+import { $menus } from '@atoms/menus';
 
 const navFields = [
   'class',
@@ -54,7 +54,7 @@ const pickFields = (navItems: MenuItem[], fields: string[] = navFields) =>
       return i;
     });
 
-export const fetchMenu = async () => {
+export const fetchMenus = async () => {
   const menus = await apiFetch(
     {
       path: 'menus',
@@ -63,7 +63,7 @@ export const fetchMenu = async () => {
       filterFields,
     },
   );
-  $menu.set({
+  $menus.set({
     headerMainNav: pickFields(menus.MainNav || []),
     footerCenterNav: pickFields(menus?.['footerNav-center'] || []),
     footerLeftNav: pickFields(menus?.['footerNav-left'] || []),
